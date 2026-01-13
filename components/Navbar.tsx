@@ -6,12 +6,11 @@ import { useState } from "react";
 
 const navItems = [
   { label: "Home", href: "/" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Event", href: "#event" },
-  { label: "Experience", href: "#experience" },
-  { label: "Cruises", href: "#cruises" },
-  { label: "Contact", href: "#contact" },
-  { label: "Blog", href: "#blog" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Event", href: "/event" },
+  { label: "Experience", href: "/experience" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -19,9 +18,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   const isActive = (href: string) => {
-    if (href === "/") return pathname === "/";
-    // hash links: consider them active only on home
-    return pathname === "/" && href.startsWith("#");
+    return pathname === href;
   };
 
   return (
@@ -87,7 +84,7 @@ export default function Navbar() {
                 </Link>
               ))}
               <Link
-                href="#contact"
+                href="/contact"
                 className="mt-2 inline-flex items-center justify-center rounded-full bg-white/15 px-4 py-2 text-sm font-medium text-white ring-1 ring-white/20 hover:bg-white/20"
                 onClick={() => setOpen(false)}
               >
