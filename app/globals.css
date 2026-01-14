@@ -93,3 +93,42 @@
 .hero-bg-animate {
   animation: hero-zoom 10s ease-in-out infinite;
 }
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes marquee-x {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  width: max-content;
+  animation: marquee-x 30s linear infinite;
+  will-change: transform;
+}
+
+.marquee-paused .marquee-track {
+  animation-play-state: paused;
+}
+
+#shorts:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+    transform: none;
+  }
+}

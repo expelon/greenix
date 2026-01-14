@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 const heroImages = ["/hero.webp", "/hero2.webp", "/hero3.webp"];
@@ -39,11 +39,49 @@ const faqItems = [
       "Simply reach out to us via our contact page or call us directly. We'll schedule a discovery session to understand your vision, then bring it to life with our signature cultural finesse.",
   },
 ];
+const shortsVideos = [
+  {
+    id: "c69srCGO2Fk",
+    title: "Temple Courtyard Elegance",
+    mood: "A sun-dappled snippet from a heritage venue setup.",
+  },
+  {
+    id: "GhiaUiAsHzg",
+    title: "Dreamy Floral Mandap",
+    mood: "An ethereal jasmine-soaked micro moment.",
+  },
+  {
+    id: "ePJ3lnJ6FLE",
+    title: "Chenda Regal Welcome",
+    mood: "Energy-packed beats welcoming guests in style.",
+  },
+  {
+    id: "I3hZmEnPsRU",
+    title: "Backwater Golden Hour",
+    mood: "Cinematic aerial views across Kerala’s waters.",
+  },
+  {
+    id: "aYND4-QcyK4",
+    title: "Sangeet Under The Stars",
+    mood: "Lights, music, and joyous motion on the dance floor.",
+  },
+  {
+    id: "Ufuxu8x-pCk",
+    title: "Signature Spark Finale",
+    mood: "A dramatic closing shot drenched in sparkle.",
+  },
+];
 
 export default function Home() {
   const [currentHero, setCurrentHero] = useState(0);
   const [isStoryPlaying, setIsStoryPlaying] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
+  const [playingShort, setPlayingShort] = useState<{ key: string; videoId: string } | null>(null);
+  const [isMarqueePaused, setIsMarqueePaused] = useState(false);
+  const shortsPlayerRef = useRef<any>(null);
+  const ytReadyRef = useRef(false);
+  const shortsPlayerHostRef = useRef<HTMLDivElement | null>(null);
+  const shortsSectionRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -52,6 +90,142 @@ export default function Home() {
 
     return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    const win = window as any;
+
+    const markReady = () => {
+      const YT = win.YT;
+      if (!YT || !YT.Player) return;
+      ytReadyRef.current = true;
+    };
+
+    if (win.YT && win.YT.Player) {
+      markReady();
+      return;
+    }
+
+    if (!document.getElementById("youtube-iframe-api")) {
+      const tag = document.createElement("script");
+      tag.id = "youtube-iframe-api";
+      tag.src = "https://www.youtube.com/iframe_api";
+      document.body.appendChild(tag);
+    }
+
+    const previousReady = win.onYouTubeIframeAPIReady;
+    win.onYouTubeIframeAPIReady = () => {
+      if (typeof previousReady === "function") previousReady();
+      markReady();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!playingShort) {
+      setIsMarqueePaused(false);
+      try {
+        shortsPlayerRef.current?.destroy?.();
+      } catch {
+        // ignore
+      }
+      shortsPlayerRef.current = null;
+      if (shortsPlayerHostRef.current) {
+        shortsPlayerHostRef.current.innerHTML = "";
+      }
+      shortsPlayerHostRef.current = null;
+      return;
+    }
+
+    const hostEl = shortsPlayerHostRef.current;
+    const win = window as any;
+    const YT = win?.YT;
+
+    if (!hostEl || !ytReadyRef.current || !YT?.Player) {
+      return;
+    }
+
+    setIsMarqueePaused(true);
+
+    try {
+      shortsPlayerRef.current?.destroy?.();
+    } catch {
+      // ignore
+    }
+    shortsPlayerRef.current = null;
+    hostEl.innerHTML = "";
+
+    shortsPlayerRef.current = new YT.Player(hostEl, {
+      videoId: playingShort.videoId,
+      playerVars: {
+        autoplay: 1,
+        mute: 0,
+        controls: 1,
+        playsinline: 1,
+        modestbranding: 1,
+        rel: 0,
+      },
+      events: {
+        onStateChange: (event: any) => {
+          if (event?.data === YT.PlayerState.ENDED) {
+            try {
+              shortsPlayerRef.current?.destroy?.();
+            } catch {
+              // ignore
+            }
+            shortsPlayerRef.current = null;
+            if (shortsPlayerHostRef.current) {
+              shortsPlayerHostRef.current.innerHTML = "";
+            }
+            setPlayingShort(null);
+            setIsMarqueePaused(false);
+          }
+        },
+      },
+    });
+
+    return () => {
+      try {
+        shortsPlayerRef.current?.destroy?.();
+      } catch {
+        // ignore
+      }
+      shortsPlayerRef.current = null;
+      if (shortsPlayerHostRef.current) {
+        shortsPlayerHostRef.current.innerHTML = "";
+      }
+    };
+  }, [playingShort]);
+
+  useEffect(() => {
+    const section = shortsSectionRef.current;
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting && playingShort) {
+            try {
+              shortsPlayerRef.current?.destroy?.();
+            } catch {
+              // ignore
+            }
+            shortsPlayerRef.current = null;
+            if (shortsPlayerHostRef.current) {
+              shortsPlayerHostRef.current.innerHTML = "";
+            }
+            setPlayingShort(null);
+            setIsMarqueePaused(false);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(section);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [playingShort]);
 
   return (
     <main>
@@ -239,8 +413,8 @@ export default function Home() {
           </div>
 
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="group rounded-3xl border border-slate-100 bg-white p-8 shadow-lg shadow-slate-200/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-sky-200/40">
-              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-sky-50 text-sky-500 transition-colors group-hover:bg-sky-500 group-hover:text-white">
+            <div className="group rounded-3xl border border-slate-100 bg-white p-8 shadow-lg shadow-slate-200/50 transition-all duration-300 lg:hover:-translate-y-2 lg:hover:shadow-2xl lg:hover:shadow-sky-200/40">
+              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-sky-50 text-sky-500 transition-colors lg:group-hover:bg-sky-500 lg:group-hover:text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-7 w-7">
                   <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                 </svg>
@@ -250,8 +424,8 @@ export default function Home() {
                 End-to-end corporate event planning with premium venues, hospitality, and flawless execution.
               </p>
             </div>
-            <div className="group rounded-3xl border border-slate-100 bg-white p-8 shadow-lg shadow-slate-200/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-sky-200/40">
-              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-sky-50 text-sky-500 transition-colors group-hover:bg-sky-500 group-hover:text-white">
+            <div className="group rounded-3xl border border-slate-100 bg-white p-8 shadow-lg shadow-slate-200/50 transition-all duration-300 lg:hover:-translate-y-2 lg:hover:shadow-2xl lg:hover:shadow-sky-200/40">
+              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-sky-50 text-sky-500 transition-colors lg:group-hover:bg-sky-500 lg:group-hover:text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-7 w-7">
                   <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                 </svg>
@@ -261,8 +435,8 @@ export default function Home() {
                 Full-service wedding planning with curated themes, decor, and seamless coordination for your special day.
               </p>
             </div>
-            <div className="group rounded-3xl border border-slate-100 bg-white p-8 shadow-lg shadow-slate-200/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-sky-200/40">
-              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-sky-50 text-sky-500 transition-colors group-hover:bg-sky-500 group-hover:text-white">
+            <div className="group rounded-3xl border border-slate-100 bg-white p-8 shadow-lg shadow-slate-200/50 transition-all duration-300 lg:hover:-translate-y-2 lg:hover:shadow-2xl lg:hover:shadow-sky-200/40">
+              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-sky-50 text-sky-500 transition-colors lg:group-hover:bg-sky-500 lg:group-hover:text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-7 w-7">
                   <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                 </svg>
@@ -272,8 +446,8 @@ export default function Home() {
                 Stunning destination weddings in Kerala with curated venues, logistics, and unforgettable experiences.
               </p>
             </div>
-            <div className="group rounded-3xl border border-slate-100 bg-white p-8 shadow-lg shadow-slate-200/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-sky-200/40">
-              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-sky-50 text-sky-500 transition-colors group-hover:bg-sky-500 group-hover:text-white">
+            <div className="group rounded-3xl border border-slate-100 bg-white p-8 shadow-lg shadow-slate-200/50 transition-all duration-300 lg:hover:-translate-y-2 lg:hover:shadow-2xl lg:hover:shadow-sky-200/40">
+              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-sky-50 text-sky-500 transition-colors lg:group-hover:bg-sky-500 lg:group-hover:text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-7 w-7">
                   <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
                 </svg>
@@ -283,8 +457,8 @@ export default function Home() {
                 Exclusive private parties with custom themes, entertainment, and impeccable guest management.
               </p>
             </div>
-            <div className="group rounded-3xl border border-slate-100 bg-white p-8 shadow-lg shadow-slate-200/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-sky-200/40">
-              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-sky-50 text-sky-500 transition-colors group-hover:bg-sky-500 group-hover:text-white">
+            <div className="group rounded-3xl border border-slate-100 bg-white p-8 shadow-lg shadow-slate-200/50 transition-all duration-300 lg:hover:-translate-y-2 lg:hover:shadow-2xl lg:hover:shadow-sky-200/40">
+              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-sky-50 text-sky-500 transition-colors lg:group-hover:bg-sky-500 lg:group-hover:text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-7 w-7">
                   <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
                 </svg>
@@ -294,8 +468,8 @@ export default function Home() {
                 Live music, DJs, and entertainment services to elevate your events with energy and style.
               </p>
             </div>
-            <div className="group rounded-3xl border border-slate-100 bg-white p-8 shadow-lg shadow-slate-200/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-sky-200/40">
-              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-sky-50 text-sky-500 transition-colors group-hover:bg-sky-500 group-hover:text-white">
+            <div className="group rounded-3xl border border-slate-100 bg-white p-8 shadow-lg shadow-slate-200/50 transition-all duration-300 lg:hover:-translate-y-2 lg:hover:shadow-2xl lg:hover:shadow-sky-200/40">
+              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-sky-50 text-sky-500 transition-colors lg:group-hover:bg-sky-500 lg:group-hover:text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-7 w-7">
                   <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
                 </svg>
@@ -314,6 +488,80 @@ export default function Home() {
             >
               Contact Us
             </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="shorts" ref={shortsSectionRef} className={`relative overflow-hidden bg-white text-slate-900 ${isMarqueePaused ? "marquee-paused" : ""}`}>
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute inset-0 bg-[radial-gradient(900px_circle_at_20%_10%,rgba(56,189,248,0.08),transparent_55%),radial-gradient(800px_circle_at_85%_30%,rgba(16,185,129,0.06),transparent_60%),radial-gradient(700px_circle_at_50%_90%,rgba(99,102,241,0.05),transparent_60%)]" />
+          <div className="absolute inset-0 opacity-[0.03] [background-image:linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] [background-size:72px_72px]" />
+          <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/80 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white/80 to-transparent" />
+        </div>
+
+        <div className="relative w-full">
+          <div className="mx-auto max-w-6xl mb-12 text-center px-4 sm:px-6 lg:px-8">
+            <p className="inline-flex items-center rounded-full bg-sky-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.3em] text-sky-600">
+              Shorts Gallery
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
+              Micro Stories from the Greenix Lens
+            </h2>
+            <p className="mt-4 max-w-3xl mx-auto text-base leading-relaxed text-slate-600">
+              Immerse yourself in quick, cinematic cuts straight from our YouTube Shorts—each a showcase of Kerala&apos;s
+              culture, color, and rhythm.
+            </p>
+          </div>
+          <div className="relative overflow-hidden">
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white to-transparent" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white to-transparent" />
+
+            <div className="marquee-track flex gap-6 lg:gap-8">
+              {[...shortsVideos, ...shortsVideos].map((video, idx) => {
+                const thumbnail = `https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`;
+                const key = `${video.id}-${idx}`;
+                const isPlaying = playingShort?.key === key;
+
+                return (
+                  <button
+                    key={`${video.id}-${idx}`}
+                    type="button"
+                    onClick={() => {
+                      if (isPlaying) return;
+                      setPlayingShort({ key, videoId: video.id });
+                    }}
+                    className="group relative flex-none w-[240px] sm:w-[270px] lg:w-[300px] focus:outline-none"
+                    aria-label={isPlaying ? `Playing ${video.title}` : `Play ${video.title}`}
+                  >
+                    <div className="relative overflow-hidden rounded-3xl">
+                      <div className="relative aspect-[9/16] overflow-hidden rounded-3xl bg-black">
+                        {isPlaying ? (
+                          <div
+                            ref={(el) => {
+                              shortsPlayerHostRef.current = el;
+                            }}
+                            className="h-full w-full"
+                          />
+                        ) : (
+                          <>
+                            <img src={thumbnail} alt={video.title} className="h-full w-full object-cover" loading="lazy" />
+                            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
+                            <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+                              <span className="flex h-14 w-14 items-center justify-center rounded-full bg-white/90 text-slate-900 shadow-xl transition">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="ml-0.5 h-7 w-7">
+                                  <path d="M8 5v14l11-7z" />
+                                </svg>
+                              </span>
+                            </div>
+                          </>
+                        )}
+                      </div>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
