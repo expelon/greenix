@@ -288,6 +288,61 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section id="team" className="bg-white py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <p className="text-sm font-semibold uppercase tracking-widest text-sky-500">Team</p>
+            <h2 className="mt-3 text-4xl font-semibold text-slate-900">The People Behind the Magic</h2>
+            <p className="mt-4 text-base leading-relaxed text-slate-600">
+              Meet the passionate professionals who bring your events to life.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-8 lg:grid-cols-2">
+            {[
+              {
+                name: "Ms. Sarita Babu",
+                title: "Managing Director, Greenix Experiences Pvt. Ltd.",
+                bio: "Ms. Sarita Babu’s dynamic leadership keeps Greenix Experiences delivering meaningful, memorable, and culturally rich celebrations across the globe.",
+              },
+              {
+                name: "Ms. Anu Stalin",
+                title: "Director, Greenix Experiences Pvt. Ltd.",
+                bio: "Ms. Anu Stalin inspires guests and teams alike with her dedication, creativity, and love for all things natural and nourishing.",
+              },
+            ].map((member) => (
+              <div
+                key={member.name}
+                className="rounded-3xl border border-slate-100 bg-white p-8 shadow-lg shadow-slate-200/50"
+              >
+                <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
+                  <div className="flex h-20 w-20 items-center justify-center rounded-full bg-slate-100 text-3xl text-slate-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" className="h-12 w-12">
+                      <path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm0 2c-3.33 0-10 1.67-10 5v2h20v-2c0-3.33-6.67-5-10-5Z" />
+                    </svg>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-semibold text-slate-900">{member.name}</h3>
+                    <p className="mt-1 text-sm font-medium text-slate-500">{member.title}</p>
+                    <p className="mt-4 text-base leading-relaxed text-slate-600">{member.bio}</p>
+                    <div className="mt-6 flex gap-3 text-xs font-medium uppercase tracking-widest text-slate-500">
+                      {["X", "Facebook", "Instagram", "LinkedIn"].map((platform) => (
+                        <span
+                          key={platform}
+                          className="inline-flex items-center gap-1 rounded-full border border-slate-200 px-3 py-1 text-[11px] text-slate-600"
+                        >
+                          {platform}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
