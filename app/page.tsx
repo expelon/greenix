@@ -116,84 +116,83 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-b from-white via-white to-slate-50 py-16">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
-          <div className="rounded-2xl overflow-hidden shadow-2xl shadow-slate-900/10">
-            <div className="relative aspect-[16/9] overflow-hidden shadow-[0_25px_60px_-30px_rgba(15,23,42,0.75)]">
-              {isStoryPlaying ? (
-                <iframe
-                  src="https://www.youtube-nocookie.com/embed/vZGIa23kZvM?rel=0&modestbranding=1&playsinline=1&controls=1&autoplay=1"
-                  title="Greenix celebration highlight"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                  className="h-full w-full"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                />
-              ) : (
-                <>
-                  <Image
-                    src="/hero2.webp"
-                    alt="Greenix celebration highlight"
-                    fill
-                    sizes="(max-width: 768px) 100vw, 75vw"
-                    className="object-cover"
-                    priority
+      <div className="flex flex-col">
+        <section className="order-2 bg-gradient-to-b from-white via-white to-slate-50 py-16 lg:order-1">
+          <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+            <div className="rounded-2xl overflow-hidden shadow-2xl shadow-slate-900/10">
+              <div className="relative aspect-[16/9] overflow-hidden shadow-[0_25px_60px_-30px_rgba(15,23,42,0.75)]">
+                {isStoryPlaying ? (
+                  <iframe
+                    src="https://www.youtube-nocookie.com/embed/vZGIa23kZvM?rel=0&modestbranding=1&playsinline=1&controls=1&autoplay=1"
+                    title="Greenix celebration highlight"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    className="h-full w-full"
+                    referrerPolicy="strict-origin-when-cross-origin"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-tr from-black/30 via-black/10 to-transparent" />
-                  <button
-                    type="button"
-                    onClick={() => setIsStoryPlaying(true)}
-                    className="group absolute inset-0 flex items-center justify-center"
-                    aria-label="Play the Greenix story video"
-                  >
-                    <span className="flex h-20 w-20 items-center justify-center rounded-full bg-white/90 text-slate-900 shadow-xl transition group-hover:scale-105">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="ml-1 h-9 w-9">
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
-                    </span>
-                  </button>
-                </>
-              )}
+                ) : (
+                  <>
+                    <Image
+                      src="/hero2.webp"
+                      alt="Greenix celebration highlight"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 75vw"
+                      className="object-cover"
+                      priority
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-tr from-black/30 via-black/10 to-transparent" />
+                    <button
+                      type="button"
+                      onClick={() => setIsStoryPlaying(true)}
+                      className="group absolute inset-0 flex items-center justify-center"
+                      aria-label="Play the Greenix story video"
+                    >
+                      <span className="flex h-20 w-20 items-center justify-center rounded-full bg-white/90 text-slate-900 shadow-xl transition group-hover:scale-105">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="ml-1 h-9 w-9">
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </span>
+                    </button>
+                  </>
+                )}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="bg-slate-50 py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
-            <div className="relative h-72 overflow-hidden rounded-3xl shadow-lg sm:h-96">
-              <Image
-                src="/about-home.jpg"
-                alt="About Greenix"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
-            </div>
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-widest text-sky-500">
-                About Greenix
-              </p>
-              <h3 className="mt-4 text-3xl font-semibold text-slate-900">
-                Crafting Immersive Corporate Experiences in Kerala
-              </h3>
-              <p className="mt-6 text-base leading-relaxed text-slate-700">
-                We specialize in curating unforgettable experiences that blend the elegance of Kerala’s
-                heritage with the innovation and purpose of your corporate events. From leadership meets and
-                dealer gatherings to private island celebrations, we bring your vision to life with a unique touch
-                of Kerala&apos;s rich cultural legacy!
-              </p>
-              <a
-                href="#contact"
-                className="mt-8 inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 text-sm font-medium text-white transition hover:bg-slate-800"
-              >
-                Contact Us
-              </a>
+        <section className="order-1 bg-slate-50 py-16 lg:order-2">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+              <div className="relative h-72 overflow-hidden rounded-3xl shadow-lg sm:h-96">
+                <Image
+                  src="/about-home.jpg"
+                  alt="About Greenix"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-widest text-sky-500">
+                  About Greenix
+                </p>
+                <h3 className="mt-4 text-3xl font-semibold text-slate-900">
+                  Crafting Immersive Corporate Experiences in Kerala
+                </h3>
+                <p className="mt-6 text-base leading-relaxed text-slate-700">
+                  We specialize in curating unforgettable experiences that blend the elegance of Kerala’s heritage with the innovation and purpose of your corporate events. From leadership meets and dealer gatherings to private island celebrations, we bring your vision to life with a unique touch of Kerala&apos;s rich cultural legacy!
+                </p>
+                <a
+                  href="#contact"
+                  className="mt-8 inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 text-sm font-medium text-white transition hover:bg-slate-800"
+                >
+                  Contact Us
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       <section id="services" className="bg-gradient-to-b from-slate-50 to-white py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
