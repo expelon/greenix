@@ -326,14 +326,55 @@ export default function Home() {
                     <h3 className="text-xl font-semibold text-slate-900">{member.name}</h3>
                     <p className="mt-1 text-sm font-medium text-slate-500">{member.title}</p>
                     <p className="mt-4 text-base leading-relaxed text-slate-600">{member.bio}</p>
-                    <div className="mt-6 flex gap-3 text-xs font-medium uppercase tracking-widest text-slate-500">
-                      {["X", "Facebook", "Instagram", "LinkedIn"].map((platform) => (
-                        <span
-                          key={platform}
-                          className="inline-flex items-center gap-1 rounded-full border border-slate-200 px-3 py-1 text-[11px] text-slate-600"
+                    <div className="mt-6 flex gap-3">
+                      {[
+                        {
+                          label: "X",
+                          href: "#",
+                          icon: (
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
+                              <path d="M15.5 3H18l-4.5 5.15L19.5 21H13l-3.5-5-4 5H2l5-6.1L3 3h5l3.1 4.5L15.5 3Zm-1.6 15h1.7L9.7 5.76h-1.8l6 12.24Z" />
+                            </svg>
+                          ),
+                        },
+                        {
+                          label: "Facebook",
+                          href: "#",
+                          icon: (
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
+                              <path d="M22 12a10 10 0 1 0-11.56 9.88V14.9H7.9V12h2.54V9.8c0-2.5 1.5-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.9h-2.34v6.98A10 10 0 0 0 22 12Z" />
+                            </svg>
+                          ),
+                        },
+                        {
+                          label: "Instagram",
+                          href: "#",
+                          icon: (
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-4 w-4">
+                              <rect width="14" height="14" x="5" y="5" rx="4" />
+                              <circle cx="12" cy="12" r="3" />
+                              <circle cx="16.5" cy="7.5" r=".75" fill="currentColor" stroke="none" />
+                            </svg>
+                          ),
+                        },
+                        {
+                          label: "LinkedIn",
+                          href: "#",
+                          icon: (
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
+                              <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 8.75h3.96V21H3V8.75Zm6.48 0H13v1.66h.05c.55-1.04 1.89-2.14 3.89-2.14 4.16 0 4.93 2.74 4.93 6.3V21h-3.96v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.41-2.08 2.85V21H9.48V8.75Z" />
+                            </svg>
+                          ),
+                        },
+                      ].map((social) => (
+                        <a
+                          key={social.label}
+                          href={social.href}
+                          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-500 transition hover:border-slate-400 hover:text-slate-700"
+                          aria-label={`${social.label} profile`}
                         >
-                          {platform}
-                        </span>
+                          {social.icon}
+                        </a>
                       ))}
                     </div>
                   </div>
