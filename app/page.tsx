@@ -15,6 +15,7 @@ const trustLogos = [
 
 export default function Home() {
   const [currentHero, setCurrentHero] = useState(0);
+  const [isStoryPlaying, setIsStoryPlaying] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -111,6 +112,49 @@ export default function Home() {
                 />
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-gradient-to-b from-white via-white to-slate-50 py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+          <div className="rounded-2xl overflow-hidden shadow-2xl shadow-slate-900/10">
+            <div className="relative aspect-[16/9] overflow-hidden shadow-[0_25px_60px_-30px_rgba(15,23,42,0.75)]">
+              {isStoryPlaying ? (
+                <iframe
+                  src="https://www.youtube-nocookie.com/embed/vZGIa23kZvM?rel=0&modestbranding=1&playsinline=1&controls=1&autoplay=1"
+                  title="Greenix celebration highlight"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="h-full w-full"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                />
+              ) : (
+                <>
+                  <Image
+                    src="/hero2.webp"
+                    alt="Greenix celebration highlight"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 75vw"
+                    className="object-cover"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-black/30 via-black/10 to-transparent" />
+                  <button
+                    type="button"
+                    onClick={() => setIsStoryPlaying(true)}
+                    className="group absolute inset-0 flex items-center justify-center"
+                    aria-label="Play the Greenix story video"
+                  >
+                    <span className="flex h-20 w-20 items-center justify-center rounded-full bg-white/90 text-slate-900 shadow-xl transition group-hover:scale-105">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="ml-1 h-9 w-9">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </span>
+                  </button>
+                </>
+              )}
+            </div>
           </div>
         </div>
       </section>
