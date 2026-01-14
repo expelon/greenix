@@ -12,10 +12,38 @@ const trustLogos = [
   "/trust5.png",
   "/trust6.png",
 ];
+const faqItems = [
+  {
+    question: "What types of events does Greenix Experiences specialize in?",
+    answer:
+      "We curate a wide spectrum of events—from high-impact corporate gatherings like leadership summits and dealer meets to private island celebrations, weddings, and intimate functions—all infused with Kerala's cultural richness.",
+  },
+  {
+    question: "How is Kerala's culture integrated into the events?",
+    answer:
+      "From traditional Kathakali performances and Kalaripayattu displays to fragrant jasmine canopies and chenda drumming processions, we seamlessly weave Kerala’s heritage into every event touchpoint.",
+  },
+  {
+    question: "What kind of team-building experiences do you offer?",
+    answer:
+      "Our signature experience is the thrilling Chundanvallam Snakeboat Race—an unforgettable team-building activity that promotes coordination, camaraderie, and pure adrenaline.",
+  },
+  {
+    question: "Can you organize cultural tours or heritage experiences alongside events?",
+    answer:
+      "Definitely. We offer curated city tours, heritage walks, and immersive experiences to help your guests connect with Kerala’s soul beyond the event setting.",
+  },
+  {
+    question: "How do I get started with logistics and on-ground execution?",
+    answer:
+      "Simply reach out to us via our contact page or call us directly. We'll schedule a discovery session to understand your vision, then bring it to life with our signature cultural finesse.",
+  },
+];
 
 export default function Home() {
   const [currentHero, setCurrentHero] = useState(0);
   const [isStoryPlaying, setIsStoryPlaying] = useState(false);
+  const [openFaqIndex, setOpenFaqIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -26,7 +54,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="pb-16">
+    <main>
       {/* Hero */}
       <section className="relative isolate min-h-[100svh] overflow-hidden pt-16">
         <div
@@ -84,6 +112,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
 
       <section className="bg-white py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -293,7 +322,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <p className="text-sm font-semibold uppercase tracking-widest text-sky-500">Team</p>
-            <h2 className="mt-3 text-4xl font-semibold text-slate-900">The People Behind the Magic</h2>
+            <h2 className="mt-3 text-3xl font-semibold text-slate-900 sm:text-4xl">The People Behind the Magic</h2>
             <p className="mt-4 text-base leading-relaxed text-slate-600">
               Meet the passionate professionals who bring your events to life.
             </p>
@@ -381,6 +410,71 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" className="relative overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-50 py-24">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute -left-24 top-10 h-72 w-72 rounded-full bg-sky-200/30 blur-3xl" />
+          <div className="absolute -right-24 bottom-10 h-72 w-72 rounded-full bg-indigo-200/30 blur-3xl" />
+        </div>
+
+        <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="inline-flex items-center rounded-full bg-sky-500/10 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-sky-600 ring-1 ring-sky-500/20">
+              FAQ
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
+              Frequently Asked Questions
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-slate-600">
+              Answers to common questions about our Kerala-inspired experiences.
+            </p>
+          </div>
+
+          <div className="mx-auto mt-12 max-w-4xl space-y-4">
+            {faqItems.map((faq, index) => {
+              const isOpen = openFaqIndex === index;
+
+              return (
+                <div
+                  key={faq.question}
+                  className={`group overflow-hidden rounded-2xl border bg-white/80 shadow-xl shadow-slate-200/60 backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:shadow-2xl hover:shadow-slate-300/50 ${
+                    isOpen ? "border-sky-200/70 ring-1 ring-sky-500/20" : "border-slate-200/70"
+                  }`}
+                >
+                  <button
+                    type="button"
+                    onClick={() => setOpenFaqIndex((prev) => (prev === index ? -1 : index))}
+                    className="flex w-full items-center justify-between gap-6 px-6 py-5 text-left"
+                    aria-expanded={isOpen}
+                  >
+                    <span className="text-base font-semibold leading-snug text-slate-900 sm:text-lg">
+                      {faq.question}
+                    </span>
+                    <span
+                      className={`flex h-8 w-8 shrink-0 items-center justify-center text-sky-600 transition-transform duration-200 ${
+                        isOpen ? "-rotate-180" : "rotate-0"
+                      }`}
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="h-4 w-4">
+                        <path d="M6 9l6 6 6-6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </span>
+                  </button>
+                  <div
+                    className={`grid px-6 transition-[grid-template-rows,opacity] duration-300 ease-in-out ${
+                      isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                    }`}
+                  >
+                    <div className="overflow-hidden border-t border-slate-100/70 pb-6 pt-4 text-base leading-relaxed text-slate-600">
+                      {faq.answer}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
