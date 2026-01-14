@@ -16,17 +16,18 @@ const navItems = [
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const isContactPage = pathname === "/contact";
 
   const isActive = (href: string) => {
     return pathname === href;
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-transparent">
-      <div className="bg-transparent">
+    <header className={`fixed inset-x-0 top-0 z-50 ${isContactPage ? "bg-white/80 backdrop-blur-md" : "bg-transparent"}`}>
+      <div className={isContactPage ? "bg-white/80 backdrop-blur-md" : "bg-transparent"}>
         <div className="mx-auto flex h-16 max-w-7xl items-center px-4 sm:px-6 lg:px-8">
           <div className="flex w-full items-center justify-between">
-            <Link href="/" className="text-lg font-semibold tracking-wide text-white">
+            <Link href="/" className={`text-lg font-semibold tracking-wide ${isContactPage ? "text-slate-900" : "text-white"}`}>
               GREENIX
             </Link>
 
@@ -35,8 +36,10 @@ export default function Navbar() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className={`text-sm font-medium uppercase tracking-wider transition-colors hover:text-white ${
-                    isActive(item.href) ? "text-white" : "text-white/80"
+                  className={`text-sm font-medium uppercase tracking-wider transition-colors ${
+                    isContactPage
+                      ? `text-slate-900 ${isActive(item.href) ? "text-sky-600" : "text-slate-600 hover:text-sky-600"}`
+                      : `text-white ${isActive(item.href) ? "text-white" : "text-white/80 hover:text-white"}`
                   }`}
                 >
                   {item.label}
@@ -46,7 +49,9 @@ export default function Navbar() {
 
             <button
               aria-label="Toggle Menu"
-              className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-md text-white hover:bg-white/10"
+              className={`md:hidden inline-flex h-10 w-10 items-center justify-center rounded-md transition-colors ${
+                isContactPage ? "text-slate-900 hover:bg-slate-100" : "text-white hover:bg-white/10"
+              }`}
               onClick={() => setOpen((v) => !v)}
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6">
