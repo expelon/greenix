@@ -128,7 +128,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="text-base font-semibold text-slate-900">Email</h3>
-                      <p className="mt-1 text-sm text-slate-600">hello@greenix.com</p>
+                      <p className="mt-1 text-sm text-slate-600">info@thegreenix.com</p>
                     </div>
                   </div>
                 </div>
@@ -142,7 +142,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="text-base font-semibold text-slate-900">Visit Our Office</h3>
-                      <p className="mt-1 text-sm text-slate-600">Kerala, India</p>
+                      <p className="mt-1 text-sm text-slate-600">Kattadi, 72/2672, Pottakuzhi Lane(West), Kaloor, Ernakulam, India, Kerala - 682026</p>
                     </div>
                   </div>
                 </div>
@@ -156,7 +156,8 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="text-base font-semibold text-slate-900">Call Us Directly</h3>
-                      <p className="mt-1 text-sm text-slate-600">+91 8590010011</p>
+                      <p className="mt-1 text-sm text-slate-600">+91 9846020091</p>
+                      <p className="mt-1 text-sm text-slate-600">+91 9349372050</p>
                     </div>
                   </div>
                 </div>
