@@ -402,7 +402,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="order-1 bg-slate-50 py-16">
+        <section id="about" className="order-1 bg-slate-50 py-16">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
               <div className="relative h-72 overflow-hidden rounded-3xl shadow-lg sm:h-96">
@@ -820,7 +820,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative isolate overflow-hidden bg-slate-900 py-20" style={{ backgroundImage: "url(/hero3.webp)", backgroundSize: "cover", backgroundPosition: "center" }}>
+      <section id="contact" className="relative isolate overflow-hidden bg-slate-900 py-20" style={{ backgroundImage: "url(/hero3.webp)", backgroundSize: "cover", backgroundPosition: "center" }}>
         <div className="absolute inset-0 bg-slate-900/80" />
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2">

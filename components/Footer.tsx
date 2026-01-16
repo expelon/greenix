@@ -23,8 +23,13 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/gallery" className="transition-colors hover:text-white">
-                  Gallery
+                <a href="/#about" className="transition-colors hover:text-white">
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="/#services" className="transition-colors hover:text-white">
+                  Services
                 </a>
               </li>
               <li>
@@ -33,17 +38,12 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/experience" className="transition-colors hover:text-white">
-                  Experience
-                </a>
-              </li>
-              <li>
                 <a href="/blog" className="transition-colors hover:text-white">
                   Blog
                 </a>
               </li>
               <li>
-                <a href="/contact" className="transition-colors hover:text-white">
+                <a href="/#contact" className="transition-colors hover:text-white">
                   Contact
                 </a>
               </li>

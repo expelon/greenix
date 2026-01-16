@@ -6,11 +6,11 @@ import { useState } from "react";
 
 const navItems = [
   { label: "Home", href: "/" },
-  { label: "Gallery", href: "/gallery" },
+  { label: "About", href: "/#about" },
+  { label: "Services", href: "/#services" },
   { label: "Event", href: "/event" },
-  { label: "Experience", href: "/experience" },
   { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/contact" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {
@@ -19,6 +19,8 @@ export default function Navbar() {
   const isContactPage = pathname === "/contact";
 
   const isActive = (href: string) => {
+    if (href === "/") return pathname === "/";
+    if (href.startsWith("/#")) return pathname === "/";
     return pathname === href;
   };
 
@@ -88,13 +90,6 @@ export default function Navbar() {
                   {item.label}
                 </Link>
               ))}
-              <Link
-                href="/contact"
-                className="mt-2 inline-flex items-center justify-center rounded-full bg-white/15 px-4 py-2 text-sm font-medium text-white ring-1 ring-white/20 hover:bg-white/20"
-                onClick={() => setOpen(false)}
-              >
-                Contact
-              </Link>
             </div>
           </div>
         </div>
