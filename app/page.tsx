@@ -436,10 +436,10 @@ export default function Home() {
         </section>
       </div>
 
-      <section id="why-choose-us" className="bg-white py-20">
+      <section id="why-choose-us" className="bg-slate-900 py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
+            <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
               Why Choose Us
             </h2>
           </div>
