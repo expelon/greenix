@@ -436,17 +436,19 @@ export default function Home() {
         </section>
       </div>
 
-      <section id="why-choose-us" className="bg-white py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section id="why-choose-us" className="why-choose-aura relative overflow-hidden py-24">
+        <div className="why-choose-aura-overlay" />
+
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
+            <h2 className="text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl">
               Why Choose Us
             </h2>
           </div>
 
           <div className="mt-12 grid gap-6 lg:grid-cols-3">
-            <div className="rounded-3xl border border-slate-200 bg-slate-50 p-8 shadow-lg shadow-slate-200/40 lg:order-1">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-xs font-semibold text-slate-700">
+            <div className="group rounded-[28px] border border-white/60 bg-white/95 p-8 shadow-xl shadow-slate-300/50 ring-1 ring-slate-100/70 backdrop-blur-sm transition-all duration-300 lg:hover:-translate-y-2 lg:hover:shadow-2xl lg:hover:shadow-slate-900/15 lg:order-1">
+              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-sky-50 text-xs font-semibold text-sky-700 ring-1 ring-sky-100 transition-colors lg:group-hover:bg-sky-500 lg:group-hover:text-white lg:group-hover:ring-sky-500">
                 01
               </div>
               <h3 className="mt-6 text-xl font-semibold text-slate-900">Tailored Experiences</h3>
@@ -455,18 +457,18 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="rounded-3xl border border-slate-200 bg-slate-50 p-8 shadow-lg shadow-slate-200/40 lg:order-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-xs font-semibold text-slate-700">
+            <div className="group rounded-[28px] border border-white/60 bg-white/95 p-8 shadow-xl shadow-slate-300/50 ring-1 ring-slate-100/70 backdrop-blur-sm transition-all duration-300 lg:hover:-translate-y-2 lg:hover:shadow-2xl lg:hover:shadow-slate-900/15 lg:order-2">
+              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-sky-50 text-xs font-semibold text-sky-700 ring-1 ring-sky-100 transition-colors lg:group-hover:bg-sky-500 lg:group-hover:text-white lg:group-hover:ring-sky-500">
                 02
               </div>
               <h3 className="mt-6 text-xl font-semibold text-slate-900">Cultural Expertise</h3>
               <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                Our deep-rooted connections with Kerala&apos;s cultural custodians ensure authenticity.
+                Our deep-rooted connections with Kerala's cultural custodians ensure authenticity.
               </p>
             </div>
 
-            <div className="rounded-3xl border border-slate-200 bg-slate-50 p-8 shadow-lg shadow-slate-200/40 lg:order-4">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-xs font-semibold text-slate-700">
+            <div className="group rounded-[28px] border border-white/60 bg-white/95 p-8 shadow-xl shadow-slate-300/50 ring-1 ring-slate-100/70 backdrop-blur-sm transition-all duration-300 lg:hover:-translate-y-2 lg:hover:shadow-2xl lg:hover:shadow-slate-900/15 lg:order-4">
+              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-sky-50 text-xs font-semibold text-sky-700 ring-1 ring-sky-100 transition-colors lg:group-hover:bg-sky-500 lg:group-hover:text-white lg:group-hover:ring-sky-500">
                 03
               </div>
               <h3 className="mt-6 text-xl font-semibold text-slate-900">Seamless Execution</h3>
@@ -475,20 +477,20 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="rounded-3xl border border-slate-200 bg-slate-50 p-8 shadow-lg shadow-slate-200/40 lg:order-5">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-xs font-semibold text-slate-700">
+            <div className="group rounded-[28px] border border-white/60 bg-white/95 p-8 shadow-xl shadow-slate-300/50 ring-1 ring-slate-100/70 backdrop-blur-sm transition-all duration-300 lg:hover:-translate-y-2 lg:hover:shadow-2xl lg:hover:shadow-slate-900/15 lg:order-5">
+              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-sky-50 text-xs font-semibold text-sky-700 ring-1 ring-sky-100 transition-colors lg:group-hover:bg-sky-500 lg:group-hover:text-white lg:group-hover:ring-sky-500">
                 04
               </div>
               <h3 className="mt-6 text-xl font-semibold text-slate-900">Exclusive Access</h3>
               <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                Private islands, historic forts, tranquil backwaters-we open doors to Kerala&apos;s hidden gems.
+                Private islands, historic forts, tranquil backwaters-we open doors to Kerala's hidden gems.
               </p>
             </div>
 
-            <div className="relative overflow-hidden rounded-3xl bg-slate-900 p-8 text-white shadow-2xl shadow-slate-900/30 lg:order-3 lg:row-span-2">
+            <div className="group relative overflow-hidden rounded-[28px] bg-slate-900/95 p-8 text-white shadow-2xl shadow-slate-900/40 ring-1 ring-white/20 transition-all duration-300 backdrop-blur-sm lg:hover:-translate-y-2 lg:hover:shadow-2xl lg:hover:shadow-black/40 lg:order-3 lg:row-span-2">
               <div className="pointer-events-none absolute inset-0 opacity-40 [background-image:radial-gradient(circle_at_top_left,rgba(56,189,248,0.45),transparent_55%),radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.35),transparent_60%)]" />
               <div className="relative">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10 text-xs font-semibold text-white">
+                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-xs font-semibold text-white ring-1 ring-white/15">
                   05
                 </div>
                 <h3 className="mt-6 text-2xl font-semibold leading-snug">Engaging Team-Building</h3>
@@ -497,7 +499,7 @@ export default function Home() {
                 </p>
                 <a
                   href="#contact"
-                  className="mt-8 inline-flex w-fit items-center justify-center rounded-full bg-emerald-400 px-6 py-3 text-sm font-semibold text-slate-900 transition hover:bg-emerald-300"
+                  className="mt-8 inline-flex w-fit items-center justify-center rounded-full bg-sky-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-sky-400"
                 >
                   Contact Us
                 </a>
