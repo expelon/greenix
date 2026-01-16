@@ -39,6 +39,45 @@ const faqItems = [
       "Simply reach out to us via our contact page or call us directly. We'll schedule a discovery session to understand your vision, then bring it to life with our signature cultural finesse.",
   },
 ];
+
+const testimonials = [
+  {
+    name: "Anjali Menon",
+    role: "Corporate Offsite",
+    quote:
+      "Greenix planned our leadership meet end-to-end with absolute precision. The Kerala cultural touches made it unforgettable.",
+  },
+  {
+    name: "Rohit Nair",
+    role: "Destination Wedding",
+    quote:
+      "From venue curation to on-ground coordination, everything was seamless. Our guests still talk about the experience.",
+  },
+  {
+    name: "Meera Krishnan",
+    role: "Private Celebration",
+    quote:
+      "Elegant decor, punctual execution, and a calm team even under pressure. Greenix made the day stress-free.",
+  },
+  {
+    name: "Vishnu S.",
+    role: "Dealer Meet",
+    quote:
+      "Professional, creative, and incredibly responsive. The flow of the event was perfect from start to finish.",
+  },
+  {
+    name: "Sarah Joseph",
+    role: "Beach Wedding",
+    quote:
+      "The styling was premium and the coordination was flawless. It felt like a movie set brought to life.",
+  },
+  {
+    name: "Arjun Pillai",
+    role: "Team Building",
+    quote:
+      "The Snakeboat Race experience was the highlight of our retreat. Our team bonded like never before.",
+  },
+];
 const shortsVideos = [
   {
     id: "c69srCGO2Fk",
@@ -320,7 +359,7 @@ export default function Home() {
       </section>
 
       <div className="flex flex-col">
-        <section className="order-2 bg-gradient-to-b from-white via-white to-slate-50 py-16 lg:order-1">
+        <section className="order-2 bg-gradient-to-b from-white via-white to-slate-50 py-16">
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
             <div className="rounded-2xl overflow-hidden shadow-2xl shadow-slate-900/10">
               <div className="relative aspect-[16/9] overflow-hidden shadow-[0_25px_60px_-30px_rgba(15,23,42,0.75)]">
@@ -363,7 +402,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="order-1 bg-slate-50 py-16 lg:order-2">
+        <section className="order-1 bg-slate-50 py-16">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
               <div className="relative h-72 overflow-hidden rounded-3xl shadow-lg sm:h-96">
@@ -396,6 +435,77 @@ export default function Home() {
           </div>
         </section>
       </div>
+
+      <section id="why-choose-us" className="bg-white py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
+              Why Choose Us
+            </h2>
+          </div>
+
+          <div className="mt-12 grid gap-6 lg:grid-cols-3">
+            <div className="rounded-3xl border border-slate-200 bg-slate-50 p-8 shadow-lg shadow-slate-200/40 lg:order-1">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-xs font-semibold text-slate-700">
+                01
+              </div>
+              <h3 className="mt-6 text-xl font-semibold text-slate-900">Tailored Experiences</h3>
+              <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                Every event is meticulously customized to reflect your goals and brand identity.
+              </p>
+            </div>
+
+            <div className="rounded-3xl border border-slate-200 bg-slate-50 p-8 shadow-lg shadow-slate-200/40 lg:order-2">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-xs font-semibold text-slate-700">
+                02
+              </div>
+              <h3 className="mt-6 text-xl font-semibold text-slate-900">Cultural Expertise</h3>
+              <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                Our deep-rooted connections with Kerala&apos;s cultural custodians ensure authenticity.
+              </p>
+            </div>
+
+            <div className="rounded-3xl border border-slate-200 bg-slate-50 p-8 shadow-lg shadow-slate-200/40 lg:order-4">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-xs font-semibold text-slate-700">
+                03
+              </div>
+              <h3 className="mt-6 text-xl font-semibold text-slate-900">Seamless Execution</h3>
+              <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                From logistics to last-minute changes, we handle everything with precision.
+              </p>
+            </div>
+
+            <div className="rounded-3xl border border-slate-200 bg-slate-50 p-8 shadow-lg shadow-slate-200/40 lg:order-5">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-xs font-semibold text-slate-700">
+                04
+              </div>
+              <h3 className="mt-6 text-xl font-semibold text-slate-900">Exclusive Access</h3>
+              <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                Private islands, historic forts, tranquil backwaters-we open doors to Kerala&apos;s hidden gems.
+              </p>
+            </div>
+
+            <div className="relative overflow-hidden rounded-3xl bg-slate-900 p-8 text-white shadow-2xl shadow-slate-900/30 lg:order-3 lg:row-span-2">
+              <div className="pointer-events-none absolute inset-0 opacity-40 [background-image:radial-gradient(circle_at_top_left,rgba(56,189,248,0.45),transparent_55%),radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.35),transparent_60%)]" />
+              <div className="relative">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10 text-xs font-semibold text-white">
+                  05
+                </div>
+                <h3 className="mt-6 text-2xl font-semibold leading-snug">Engaging Team-Building</h3>
+                <p className="mt-4 text-sm leading-relaxed text-white/80">
+                  Our activities, like the Snakeboat Race, go beyond fun-they build stronger, more connected teams.
+                </p>
+                <a
+                  href="#contact"
+                  className="mt-8 inline-flex w-fit items-center justify-center rounded-full bg-emerald-400 px-6 py-3 text-sm font-semibold text-slate-900 transition hover:bg-emerald-300"
+                >
+                  Contact Us
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section id="services" className="bg-gradient-to-b from-slate-50 to-white py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -658,6 +768,130 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden bg-white py-20">
+        <div className="w-full">
+          <div className="text-center">
+            <p className="text-sm font-semibold uppercase tracking-widest text-sky-500">Testimonials</p>
+            <h2 className="mt-3 text-3xl font-semibold text-slate-900 sm:text-4xl">What Our Clients Say</h2>
+            <p className="mt-4 text-base leading-relaxed text-slate-600">
+              A few words from the people who trusted Greenix to craft their most important moments.
+            </p>
+          </div>
+
+          <div className="mt-12 space-y-6">
+            <div className="relative overflow-hidden">
+              <div className="marquee-track marquee-track-reverse flex gap-5">
+                {[...testimonials, ...testimonials].map((t, idx) => (
+                  <div
+                    key={`${t.name}-${t.role}-${idx}-top`}
+                    className="w-[280px] sm:w-[320px] flex-none rounded-3xl border border-slate-200 bg-white p-6 shadow-lg shadow-slate-200/40"
+                  >
+                    <p className="text-sm leading-relaxed text-slate-700">{t.quote}</p>
+                    <div className="mt-5">
+                      <p className="text-sm font-semibold text-slate-900">{t.name}</p>
+                      <p className="text-xs text-slate-500">{t.role}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="relative overflow-hidden">
+              <div className="marquee-track flex gap-5">
+                {[...testimonials, ...testimonials].map((t, idx) => (
+                  <div
+                    key={`${t.name}-${t.role}-${idx}-bottom`}
+                    className="w-[280px] sm:w-[320px] flex-none rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-lg shadow-slate-200/40"
+                  >
+                    <p className="text-sm leading-relaxed text-slate-700">{t.quote}</p>
+                    <div className="mt-5">
+                      <p className="text-sm font-semibold text-slate-900">{t.name}</p>
+                      <p className="text-xs text-slate-500">{t.role}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="relative isolate overflow-hidden bg-slate-900 py-20" style={{ backgroundImage: "url(/hero3.webp)", backgroundSize: "cover", backgroundPosition: "center" }}>
+        <div className="absolute inset-0 bg-slate-900/80" />
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-12 lg:grid-cols-2">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/70">Contact</p>
+              <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">
+                Looking for the most creative & innovative event planners in Kerala?
+              </h2>
+              <p className="mt-6 text-base leading-relaxed text-white/80">
+                Imagine celebrating the most special events of your life without worrying about a single thing. Greenix
+                Experiences is here to make your dream events come true! Our expert event management team offers
+                professional event planning and management services in cities, villages, and small towns across Kerala,
+                from south to north, using creative and innovative methods to plan and curate perfect, hassle-free
+                celebrations that will captivate your attendees. Contact us today to bring your vision to life and create
+                unforgettable memories!
+              </p>
+            </div>
+            <div className="rounded-xl bg-white/95 p-8 shadow-2xl shadow-slate-900/40">
+              <form className="space-y-4">
+                <div>
+                  <label htmlFor="cta-name" className="sr-only">
+                    Full Name
+                  </label>
+                  <input
+                    id="cta-name"
+                    type="text"
+                    placeholder="Enter your Full Name"
+                    className="w-full rounded-lg border border-slate-200 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900/20"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="cta-phone" className="sr-only">
+                    Phone Number
+                  </label>
+                  <input
+                    id="cta-phone"
+                    type="tel"
+                    placeholder="Enter your Phone Number"
+                    className="w-full rounded-lg border border-slate-200 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900/20"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="cta-email" className="sr-only">
+                    Email
+                  </label>
+                  <input
+                    id="cta-email"
+                    type="email"
+                    placeholder="Enter your Email ID"
+                    className="w-full rounded-lg border border-slate-200 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900/20"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="cta-message" className="sr-only">
+                    Message
+                  </label>
+                  <textarea
+                    id="cta-message"
+                    rows={4}
+                    placeholder="Message"
+                    className="w-full rounded-lg border border-slate-200 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900/20"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="w-full rounded-lg bg-sky-600 px-4 py-3 text-sm font-semibold uppercase tracking-widest text-white transition hover:bg-sky-500"
+                >
+                  Submit
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </section>
