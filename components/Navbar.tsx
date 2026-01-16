@@ -10,7 +10,7 @@ const navItems = [
   { label: "Services", href: "/#services" },
   { label: "Event", href: "/event" },
   { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -20,6 +20,7 @@ export default function Navbar() {
 
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
+    if (href === "/contact") return pathname === "/contact";
     if (href.startsWith("/#")) return pathname === "/";
     return pathname === href;
   };
