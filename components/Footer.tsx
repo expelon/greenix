@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="bg-slate-900 text-slate-300">
@@ -64,34 +66,34 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3 text-sm">
               <li>
-                <a href="/" className="transition-colors hover:text-white">
+                <Link href="/" className="transition-colors hover:text-white">
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/about" className="transition-colors hover:text-white">
+                <Link href="/about" className="transition-colors hover:text-white">
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/#services" className="transition-colors hover:text-white">
+                <Link href="/#services" className="transition-colors hover:text-white">
                   Services
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/event" className="transition-colors hover:text-white">
+                <Link href="/event" className="transition-colors hover:text-white">
                   Event
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/blog" className="transition-colors hover:text-white">
+                <Link href="/blog" className="transition-colors hover:text-white">
                   Blog
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/contact" className="transition-colors hover:text-white">
+                <Link href="/contact" className="transition-colors hover:text-white">
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -103,29 +105,29 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3 text-sm">
               <li>
-                <a href="/#services" className="transition-colors hover:text-white">
+                <Link href="/#services" className="transition-colors hover:text-white">
                   Corporate Events
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/#services" className="transition-colors hover:text-white">
+                <Link href="/#services" className="transition-colors hover:text-white">
                   Wedding Planners
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/#services" className="transition-colors hover:text-white">
+                <Link href="/#services" className="transition-colors hover:text-white">
                   Destination Weddings
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/#services" className="transition-colors hover:text-white">
+                <Link href="/#services" className="transition-colors hover:text-white">
                   Private Parties
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/#services" className="transition-colors hover:text-white">
+                <Link href="/#services" className="transition-colors hover:text-white">
                   Beach Weddings
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
