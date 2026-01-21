@@ -435,7 +435,7 @@ export default function Home() {
             <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
               <div className="relative h-72 overflow-hidden rounded-3xl shadow-lg sm:h-96">
                 <Image
-                  src="/about-home.jpg"
+                  src="/about-greenix.webp"
                   alt="About Greenix"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
