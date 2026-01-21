@@ -287,13 +287,13 @@ export default function Home() {
               Kerala's #1 Exclusive Event Company
             </p>
             <h1 className="mt-4 text-4xl font-semibold leading-tight tracking-tight text-white sm:text-6xl">
-              Partner with Greenix
-              <br />
-              Event Management
-              <br />
-              in Kerala
+              Celebrate the Spirit of Kerala with Greenix
             </h1>
-            <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-6">
+            <p className="mt-6 text-lg leading-relaxed text-white/90">
+              Bespoke events that blend tradition, elegance, and modern flair.&nbsp;
+              <span className="block sm:inline">&ldquo;From luxury weddings to high-impact corporate meets, we design unforgettable moments.&rdquo;</span>
+            </p>
+            <div className="mt-6 sm:mt-10 flex flex-col sm:flex-row sm:items-center gap-6">
               <a
                 href="#contact"
                 className="inline-flex w-fit items-center justify-center rounded-full bg-white/15 px-6 py-3 text-sm font-medium text-white ring-1 ring-white/25 hover:bg-white/20"
