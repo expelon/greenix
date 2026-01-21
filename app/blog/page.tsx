@@ -1,3 +1,8 @@
+"use client";
+
+import Link from "next/link";
+import Image from "next/image";
+
 export default function Blog() {
   return (
     <main className="pb-16">
@@ -14,7 +19,7 @@ export default function Blog() {
           <div className="max-w-3xl text-center">
             <h1 className="text-4xl font-semibold text-white sm:text-6xl">Blog</h1>
             <p className="mt-4 text-lg leading-relaxed text-white/80">
-              Latest news, tips, and stories from the world of events.
+              Deep dives into destination stories, insider event wisdom, and the moments that inspire immersive experiences.
             </p>
           </div>
         </div>
@@ -23,16 +28,25 @@ export default function Blog() {
       <section className="bg-white py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
-              <article key={i} className="rounded-2xl border border-slate-200 p-6">
-                <div className="aspect-video w-full rounded-xl bg-slate-100" />
-                <h2 className="mt-4 text-xl font-semibold text-slate-900">Blog Post Title {i}</h2>
-                <p className="mt-2 text-sm text-slate-500">January {i + 10}, 2026</p>
-                <p className="mt-3 text-slate-600">
-                  Brief excerpt of the blog post content goes here...
+            <Link href="/blog/maldives-real-story">
+              <article className="rounded-xl border border-slate-200 p-6 transition hover:shadow-xl hover:shadow-slate-200/50 cursor-pointer">
+                <div className="aspect-video -mx-6 -mt-6 mb-4 overflow-hidden rounded-t-xl bg-slate-100">
+                  <Image
+                    src="/maldives.webp"
+                    alt="The real Maldives"
+                    width={640}
+                    height={360}
+                    className="h-full w-full object-cover"
+                    priority
+                  />
+                </div>
+                <h2 className="mt-4 text-xl font-semibold text-slate-900">The Real Story About the Maldives Most Don't Know</h2>
+                <p className="mt-2 text-sm text-slate-500">January 21, 2026</p>
+                <p className="mt-3 text-slate-600 line-clamp-3">
+                  For many travelers, the Maldives exists as a picture-perfect fantasy—overwater villas, turquoise lagoons, and peaceful private beaches. While this image is appealing, it represents only a small slice of reality. Beyond the resorts lies a country shaped by generations of island life...
                 </p>
               </article>
-            ))}
+            </Link>
           </div>
         </div>
       </section>
