@@ -2,6 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { ChevronRight, MapPin, Phone, Mail, Calendar, Users, Sparkles, Clock, CheckCircle } from "lucide-react";
+import Link from "next/link";
+import ContactForm from "@/components/ContactForm";
 
 const heroImages = ["/hero.webp", "/hero2.webp", "/hero3.webp"];
 const trustLogos = [
@@ -841,58 +844,7 @@ export default function Home() {
               </p>
             </div>
             <div className="rounded-xl bg-white/95 p-8 shadow-2xl shadow-slate-900/40">
-              <form className="space-y-4">
-                <div>
-                  <label htmlFor="cta-name" className="sr-only">
-                    Full Name
-                  </label>
-                  <input
-                    id="cta-name"
-                    type="text"
-                    placeholder="Enter your Full Name"
-                    className="w-full rounded-lg border border-slate-200 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900/20"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="cta-phone" className="sr-only">
-                    Phone Number
-                  </label>
-                  <input
-                    id="cta-phone"
-                    type="tel"
-                    placeholder="Enter your Phone Number"
-                    className="w-full rounded-lg border border-slate-200 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900/20"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="cta-email" className="sr-only">
-                    Email
-                  </label>
-                  <input
-                    id="cta-email"
-                    type="email"
-                    placeholder="Enter your Email ID"
-                    className="w-full rounded-lg border border-slate-200 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900/20"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="cta-message" className="sr-only">
-                    Message
-                  </label>
-                  <textarea
-                    id="cta-message"
-                    rows={4}
-                    placeholder="Message"
-                    className="w-full rounded-lg border border-slate-200 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900/20"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="w-full rounded-lg bg-sky-600 px-4 py-3 text-sm font-semibold uppercase tracking-widest text-white transition hover:bg-sky-500"
-                >
-                  Submit
-                </button>
-              </form>
+              <ContactForm />
             </div>
           </div>
         </div>
