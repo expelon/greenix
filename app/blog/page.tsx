@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { ChevronRight } from "lucide-react";
 
 export default function Blog() {
   return (
@@ -10,7 +11,7 @@ export default function Blog() {
         <div
           className="absolute inset-0 -z-10 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/hero2.webp')",
+            backgroundImage: "url('/blog.webp')",
           }}
         />
         <div className="absolute inset-0 -z-10 bg-black/50" />
@@ -45,6 +46,12 @@ export default function Blog() {
                 <p className="mt-3 text-slate-600 line-clamp-3">
                   For many travelers, the Maldives exists as a picture-perfect fantasy—overwater villas, turquoise lagoons, and peaceful private beaches. While this image is appealing, it represents only a small slice of reality. Beyond the resorts lies a country shaped by generations of island life...
                 </p>
+                <div className="mt-4">
+                  <span className="inline-flex items-center gap-2 text-sm font-semibold text-sky-600 transition hover:text-sky-500">
+                    View More
+                    <ChevronRight className="h-4 w-4" />
+                  </span>
+                </div>
               </article>
             </Link>
           </div>
