@@ -817,14 +817,13 @@ export default function Home() {
                           ),
                         },
                       ].map((social) => (
-                        <a
+                        <span
                           key={social.label}
-                          href={social.href}
-                          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-500 transition hover:border-slate-400 hover:text-slate-700"
+                          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-500"
                           aria-label={`${social.label} profile`}
                         >
                           {social.icon}
-                        </a>
+                        </span>
                       ))}
                     </div>
                   </div>
