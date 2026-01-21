@@ -26,6 +26,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const isContactPage = pathname === "/contact";
   const isAboutPage = pathname === "/about";
   const isServicePage = pathname?.startsWith("/services");
@@ -152,19 +153,37 @@ export default function Navbar() {
                 if (item.label === "Services") {
                   return (
                     <div key="services-mobile" className="rounded-md bg-white/5 px-3 py-2">
-                      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/60">Services</p>
-                      <div className="mt-3 space-y-2">
-                        {serviceLinks.map((service) => (
-                          <Link
-                            key={service.href}
-                            href={service.href}
-                            className="block rounded-md bg-white/10 px-3 py-2 text-sm font-medium text-white"
-                            onClick={() => setOpen(false)}
-                          >
-                            {service.label}
-                          </Link>
-                        ))}
-                      </div>
+                      <button
+                        type="button"
+                        onClick={() => setMobileServicesOpen((v) => !v)}
+                        className="flex w-full items-center justify-between text-left text-xs font-semibold uppercase tracking-[0.3em] text-white/60"
+                      >
+                        Services
+                        <svg
+                          className={`h-4 w-4 transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`}
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                        >
+                          <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </button>
+                      {mobileServicesOpen && (
+                        <div className="mt-3 space-y-2">
+                          {serviceLinks.map((service) => (
+                            <Link
+                              key={service.href}
+                              href={service.href}
+                              className="block rounded-md bg-white/10 px-3 py-2 text-sm font-medium text-white"
+                              onClick={() => {
+                                setOpen(false);
+                                setMobileServicesOpen(false);
+                              }}
+                            >
+                              {service.label}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   );
                 }
