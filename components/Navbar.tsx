@@ -17,6 +17,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const isContactPage = pathname === "/contact";
+  const isAboutPage = pathname === "/about";
 
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
@@ -27,11 +28,11 @@ export default function Navbar() {
   };
 
   return (
-    <header className={`fixed inset-x-0 top-0 z-50 ${isContactPage ? "bg-white/80 backdrop-blur-md" : "bg-transparent"}`}>
-      <div className={isContactPage ? "bg-white/80 backdrop-blur-md" : "bg-transparent"}>
+    <header className={`fixed inset-x-0 top-0 z-50 ${isContactPage || isAboutPage ? "bg-white/80 backdrop-blur-md" : "bg-transparent"}`}>
+      <div className={isContactPage || isAboutPage ? "bg-white/80 backdrop-blur-md" : "bg-transparent"}>
         <div className="mx-auto flex h-16 max-w-7xl items-center px-4 sm:px-6 lg:px-8">
           <div className="flex w-full items-center justify-between">
-            <Link href="/" className={`text-lg font-semibold tracking-wide ${isContactPage ? "text-slate-900" : "text-white"}`}>
+            <Link href="/" className={`text-lg font-semibold tracking-wide ${isContactPage || isAboutPage ? "text-slate-900" : "text-white"}`}>
               GREENIX
             </Link>
 
@@ -41,7 +42,7 @@ export default function Navbar() {
                   key={item.label}
                   href={item.href}
                   className={`text-sm font-medium uppercase tracking-wider transition-colors ${
-                    isContactPage
+                    isContactPage || isAboutPage
                       ? `text-slate-900 ${isActive(item.href) ? "text-sky-600" : "text-slate-600 hover:text-sky-600"}`
                       : `text-white ${isActive(item.href) ? "text-white" : "text-white/80 hover:text-white"}`
                   }`}

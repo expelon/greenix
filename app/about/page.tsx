@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 
 export default function About() {
   return (
@@ -11,7 +12,34 @@ export default function About() {
         </div>
 
         <div className="mx-auto flex min-h-[calc(100svh-4rem)] max-w-7xl items-center px-4 py-12 sm:px-6 lg:px-8">
-          {/* Blank About Page - Content Removed */}
+          <div className="max-w-6xl grid gap-12 lg:grid-cols-2 lg:items-center">
+            <div className="relative h-96 overflow-hidden rounded-3xl shadow-lg lg:h-full">
+              <Image
+                src="/about-home.jpg"
+                alt="About Greenix"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
+            
+            <div className="text-center lg:text-left">
+              <h1 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
+                About Us
+              </h1>
+              <div className="mt-8 text-lg leading-relaxed text-slate-700 space-y-6">
+                <p>
+                  At Greenix, we don&apos;t just plan events we craft experiences that feel personal, purposeful, and unforgettable.
+                </p>
+                <p>
+                  Born in Kerala and inspired by its rich traditions, Greenix is an event company that seamlessly blends culture, elegance, and modern flair. From intimate luxury weddings steeped in rituals to high-impact corporate meets that demand precision and creativity, we bring stories to life through thoughtful design and flawless execution.
+                </p>
+                <p>
+                  We believe every event has a soul. That&apos;s why we start by listening to your vision, your values, and your expectations. Whether it&apos;s warmth of a traditional celebration or sophistication of a contemporary setup, our team curates every detail with care, creativity, and commitment.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
