@@ -563,6 +563,13 @@ export default function Home() {
               <p className="mt-3 text-base leading-relaxed text-slate-600">
                 End-to-end corporate event planning with premium venues, hospitality, and flawless execution.
               </p>
+              <Link
+                href="/services/corporate-events"
+                className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-sky-600 transition hover:text-sky-500"
+              >
+                View More
+                <ChevronRight className="h-4 w-4" />
+              </Link>
             </div>
             <div className="group rounded-3xl border border-slate-100 bg-white p-8 shadow-lg shadow-slate-200/50 transition-all duration-300 lg:hover:-translate-y-2 lg:hover:shadow-2xl lg:hover:shadow-sky-200/40">
               <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-sky-50 text-sky-500 transition-colors lg:group-hover:bg-sky-500 lg:group-hover:text-white">
@@ -574,6 +581,13 @@ export default function Home() {
               <p className="mt-3 text-base leading-relaxed text-slate-600">
                 Full-service wedding planning with curated themes, decor, and seamless coordination for your special day.
               </p>
+              <Link
+                href="/services/wedding-planners"
+                className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-sky-600 transition hover:text-sky-500"
+              >
+                View More
+                <ChevronRight className="h-4 w-4" />
+              </Link>
             </div>
             <div className="group rounded-3xl border border-slate-100 bg-white p-8 shadow-lg shadow-slate-200/50 transition-all duration-300 lg:hover:-translate-y-2 lg:hover:shadow-2xl lg:hover:shadow-sky-200/40">
               <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-sky-50 text-sky-500 transition-colors lg:group-hover:bg-sky-500 lg:group-hover:text-white">
@@ -585,6 +599,13 @@ export default function Home() {
               <p className="mt-3 text-base leading-relaxed text-slate-600">
                 Stunning destination weddings in Kerala with curated venues, logistics, and unforgettable experiences.
               </p>
+              <Link
+                href="/services/destination-weddings"
+                className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-sky-600 transition hover:text-sky-500"
+              >
+                View More
+                <ChevronRight className="h-4 w-4" />
+              </Link>
             </div>
             <div className="group rounded-3xl border border-slate-100 bg-white p-8 shadow-lg shadow-slate-200/50 transition-all duration-300 lg:hover:-translate-y-2 lg:hover:shadow-2xl lg:hover:shadow-sky-200/40">
               <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-sky-50 text-sky-500 transition-colors lg:group-hover:bg-sky-500 lg:group-hover:text-white">
@@ -596,6 +617,13 @@ export default function Home() {
               <p className="mt-3 text-base leading-relaxed text-slate-600">
                 Exclusive private parties with custom themes, entertainment, and impeccable guest management.
               </p>
+              <Link
+                href="/services/private-party"
+                className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-sky-600 transition hover:text-sky-500"
+              >
+                View More
+                <ChevronRight className="h-4 w-4" />
+              </Link>
             </div>
             <div className="group rounded-3xl border border-slate-100 bg-white p-8 shadow-lg shadow-slate-200/50 transition-all duration-300 lg:hover:-translate-y-2 lg:hover:shadow-2xl lg:hover:shadow-sky-200/40">
               <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-sky-50 text-sky-500 transition-colors lg:group-hover:bg-sky-500 lg:group-hover:text-white">
@@ -607,6 +635,13 @@ export default function Home() {
               <p className="mt-3 text-base leading-relaxed text-slate-600">
                 Live music, DJs, and entertainment services to elevate your events with energy and style.
               </p>
+              <Link
+                href="/services/music-entertainment"
+                className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-sky-600 transition hover:text-sky-500"
+              >
+                View More
+                <ChevronRight className="h-4 w-4" />
+              </Link>
             </div>
             <div className="group rounded-3xl border border-slate-100 bg-white p-8 shadow-lg shadow-slate-200/50 transition-all duration-300 lg:hover:-translate-y-2 lg:hover:shadow-2xl lg:hover:shadow-sky-200/40">
               <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-sky-50 text-sky-500 transition-colors lg:group-hover:bg-sky-500 lg:group-hover:text-white">
@@ -618,6 +653,13 @@ export default function Home() {
               <p className="mt-3 text-base leading-relaxed text-slate-600">
                 Romantic beach weddings with stunning setups, decor, and seamless coordination by the sea.
               </p>
+              <Link
+                href="/services/beach-wedding"
+                className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-sky-600 transition hover:text-sky-500"
+              >
+                View More
+                <ChevronRight className="h-4 w-4" />
+              </Link>
             </div>
           </div>
 
