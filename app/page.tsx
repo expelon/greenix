@@ -330,12 +330,42 @@ export default function Home() {
       </section>
 
 
-      <section className="bg-white py-12">
+      <section className="bg-white py-12 overflow-hidden">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-center text-3xl font-semibold text-black">
             Trusted By
           </h2>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10">
+          
+          {/* Mobile: Animated marquee */}
+          <div className="lg:hidden mt-8 relative overflow-hidden">
+            <div className="marquee-track flex gap-8">
+              {[...trustLogos, ...trustLogos].map((logo, index) => {
+                const sizeConfig =
+                  index === 1 || index === 7
+                    ? { width: 210, height: 70, className: "h-16" }
+                    : index === 0 || index === 6
+                    ? { width: 150, height: 55, className: "h-12" }
+                    : index === 2 || index === 3 || index === 8 || index === 9
+                    ? { width: 130, height: 45, className: "h-11" }
+                    : { width: 140, height: 50, className: "h-12" };
+
+                return (
+                  <div key={`mobile-${logo}-${index}`} className="flex-shrink-0 flex items-center justify-center">
+                    <Image
+                      src={logo}
+                      alt={`Trusted brand ${(index % 6) + 1}`}
+                      width={sizeConfig.width}
+                      height={sizeConfig.height}
+                      className={`w-auto object-contain ${sizeConfig.className}`}
+                    />
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Desktop: Static grid */}
+          <div className="hidden lg:flex lg:flex-wrap lg:items-center lg:justify-center lg:gap-10 lg:mt-8">
             {trustLogos.map((logo, index) => {
               const sizeConfig =
                 index === 1
@@ -347,14 +377,15 @@ export default function Home() {
                   : { width: 140, height: 50, className: "h-12" };
 
               return (
-                <Image
-                  key={logo}
-                  src={logo}
-                  alt={`Trusted brand ${index + 1}`}
-                  width={sizeConfig.width}
-                  height={sizeConfig.height}
-                  className={`w-auto object-contain ${sizeConfig.className}`}
-                />
+                <div key={`desktop-${logo}`} className="flex items-center justify-center">
+                  <Image
+                    src={logo}
+                    alt={`Trusted brand ${index + 1}`}
+                    width={sizeConfig.width}
+                    height={sizeConfig.height}
+                    className={`w-auto object-contain ${sizeConfig.className}`}
+                  />
+                </div>
               );
             })}
           </div>
