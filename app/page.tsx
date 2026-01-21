@@ -293,36 +293,30 @@ export default function Home() {
               <br />
               in Kerala
             </h1>
-            <div className="mt-10 flex flex-row gap-3 sm:flex-row sm:items-center">
+            <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-6">
               <a
                 href="#contact"
                 className="inline-flex w-fit items-center justify-center rounded-full bg-white/15 px-6 py-3 text-sm font-medium text-white ring-1 ring-white/25 hover:bg-white/20"
               >
                 Contact Us
               </a>
-              <a
-                href="#brochure"
-                className="inline-flex w-fit items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-medium text-black hover:bg-white/90"
-              >
-                View More
-              </a>
-            </div>
-
-            <div className="mt-10 flex items-center gap-4">
-              <div className="flex -space-x-2">
-                <div className="relative h-10 w-10 overflow-hidden rounded-full ring-1 ring-white/20">
-                  <Image src="/p1.webp" alt="Client 1" fill sizes="40px" className="object-cover" />
+              
+              <div className="flex items-center gap-4 mt-4 sm:mt-0">
+                <div className="flex -space-x-2">
+                  <div className="relative h-10 w-10 overflow-hidden rounded-full ring-1 ring-white/20">
+                    <Image src="/p1.webp" alt="Client 1" fill sizes="40px" className="object-cover" />
+                  </div>
+                  <div className="relative h-10 w-10 overflow-hidden rounded-full ring-1 ring-white/20">
+                    <Image src="/p2.webp" alt="Client 2" fill sizes="40px" className="object-cover" />
+                  </div>
+                  <div className="relative h-10 w-10 overflow-hidden rounded-full ring-1 ring-white/20">
+                    <Image src="/p3.webp" alt="Client 3" fill sizes="40px" className="object-cover" />
+                  </div>
                 </div>
-                <div className="relative h-10 w-10 overflow-hidden rounded-full ring-1 ring-white/20">
-                  <Image src="/p2.webp" alt="Client 2" fill sizes="40px" className="object-cover" />
+                <div>
+                  <div className="text-sm font-medium text-yellow-400">★★★★★</div>
+                  <div className="text-xs text-white/80">4.8/5 Rating</div>
                 </div>
-                <div className="relative h-10 w-10 overflow-hidden rounded-full ring-1 ring-white/20">
-                  <Image src="/p3.webp" alt="Client 3" fill sizes="40px" className="object-cover" />
-                </div>
-              </div>
-              <div>
-                <div className="text-sm font-medium text-yellow-400">★★★★★</div>
-                <div className="text-xs text-white/80">4.8/5 Rating</div>
               </div>
             </div>
           </div>
