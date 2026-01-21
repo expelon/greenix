@@ -6,7 +6,7 @@ import { ChevronRight, MapPin, Phone, Mail, Calendar, Users, Sparkles, Clock, Ch
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
 
-const heroImages = ["/hero.webp", "/hero2.webp", "/hero3.webp"];
+const heroImages = ["/hero.webp", "/about-home.jpg", "/hero3.webp"];
 const trustLogos = [
   "/trust1.jpg",
   "/trust2.png",
@@ -447,7 +447,7 @@ export default function Home() {
                   About Greenix
                 </p>
                 <h3 className="mt-4 text-3xl font-semibold text-slate-900">
-                  Crafting Immersive Corporate Experiences in Kerala
+                  Creating Unforgettable Moments in Kerala
                 </h3>
                 <p className="mt-6 text-base leading-relaxed text-slate-700">
                   We specialize in curating unforgettable experiences that blend the elegance of Kerala’s heritage with the innovation and purpose of your corporate events. From leadership meets and dealer gatherings to private island celebrations, we bring your vision to life with a unique touch of Kerala&apos;s rich cultural legacy!
