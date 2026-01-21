@@ -24,14 +24,8 @@ export default function Event() {
       {/* Content */}
       <section className="bg-white py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="space-y-8">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="rounded-2xl border border-slate-200 p-6">
-                <div className="aspect-video w-full rounded-xl bg-slate-100" />
-                <h2 className="mt-4 text-xl font-semibold text-slate-900">Event Title {i}</h2>
-                <p className="mt-2 text-slate-600">Event description goes here.</p>
-              </div>
-            ))}
+          <div className="text-center">
+            <p className="text-slate-600">No events to display at the moment.</p>
           </div>
         </div>
       </section>
