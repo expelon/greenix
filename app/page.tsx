@@ -662,15 +662,6 @@ export default function Home() {
               </Link>
             </div>
           </div>
-
-          <div className="mt-14 flex justify-center">
-            <a
-              href="#contact"
-              className="inline-flex items-center justify-center rounded-full bg-slate-900 px-8 py-4 text-sm font-semibold text-white shadow-xl shadow-slate-900/30 transition-all duration-300 hover:-translate-y-1 hover:bg-slate-800 hover:shadow-2xl hover:shadow-slate-900/40"
-            >
-              Contact Us
-            </a>
-          </div>
         </div>
       </section>
 
