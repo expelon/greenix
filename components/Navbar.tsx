@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const navItems = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/#about" },
+  { label: "About", href: "/about" },
   { label: "Services", href: "/#services" },
   { label: "Event", href: "/event" },
   { label: "Blog", href: "/blog" },
@@ -21,6 +21,7 @@ export default function Navbar() {
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
     if (href === "/contact") return pathname === "/contact";
+    if (href === "/about") return pathname === "/about";
     if (href.startsWith("/#")) return pathname === "/";
     return pathname === href;
   };

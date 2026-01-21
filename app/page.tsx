@@ -452,12 +452,12 @@ export default function Home() {
                 <p className="mt-6 text-base leading-relaxed text-slate-700">
                   We specialize in curating unforgettable experiences that blend the elegance of Kerala’s heritage with the innovation and purpose of your corporate events. From leadership meets and dealer gatherings to private island celebrations, we bring your vision to life with a unique touch of Kerala&apos;s rich cultural legacy!
                 </p>
-                <a
-                  href="#contact"
+                <Link
+                  href="/about"
                   className="mt-8 inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 text-sm font-medium text-white transition hover:bg-slate-800"
                 >
-                  Contact Us
-                </a>
+                  Know More
+                </Link>
               </div>
             </div>
           </div>
