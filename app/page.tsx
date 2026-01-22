@@ -7,6 +7,24 @@ import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
 
 const heroImages = ["/hero.webp", "/about-home.jpg", "/hero3.webp"];
+
+const heroContent = [
+  {
+    subtitle: "Kerala's #1 Exclusive Event Company",
+    title: "Greenix Experiences: Stories That Inspire",
+    description: "Elevating events with Kerala's heritage and corporate brilliance. Dealer meets, leadership gatherings, and curated celebrations—every event tells a tale.",
+  },
+  {
+    subtitle: "Kerala's #1 Exclusive Event Company",
+    title: "Crafting Experiences, Not Just Events",
+    description: "Where Kerala's cultural grace meets modern corporate excellence. From summits to island weddings, we blend heritage with ambition to create lasting memories.",
+  },
+  {
+    subtitle: "Kerala's #1 Exclusive Event Company",
+    title: "Celebrate the Spirit of Kerala with Greenix",
+    description: "Bespoke events that blend tradition, elegance, and modern flair. From luxury weddings to high-impact corporate meets, we design unforgettable moments.",
+  },
+];
 const trustLogos = [
   "/trust1.jpg",
   "/trust2.png",
@@ -284,15 +302,15 @@ export default function Home() {
         <div className="mx-auto flex min-h-[calc(100svh-4rem)] max-w-7xl items-center px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <p className="text-sm font-medium uppercase tracking-widest text-white/80">
-              Kerala's #1 Exclusive Event Company
+              {heroContent[currentHero].subtitle}
             </p>
             <h1 className="mt-4 text-4xl font-semibold leading-tight tracking-tight text-white sm:text-6xl">
-              Celebrate the Spirit of Kerala with Greenix
+              {heroContent[currentHero].title}
             </h1>
-            <p className="mt-6 text-lg leading-relaxed text-white/90">
-              Bespoke events that blend tradition, elegance, and modern flair.&nbsp;
-              <span className="block sm:inline">&ldquo;From luxury weddings to high-impact corporate meets, we design unforgettable moments.&rdquo;</span>
-            </p>
+            <p 
+              className="mt-6 text-lg leading-relaxed text-white/90"
+              dangerouslySetInnerHTML={{ __html: heroContent[currentHero].description }}
+            />
             <div className="mt-6 sm:mt-10 flex flex-col sm:flex-row sm:items-center gap-6">
               <Link
                 href="/contact"
