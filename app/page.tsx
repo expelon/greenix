@@ -294,12 +294,12 @@ export default function Home() {
               <span className="block sm:inline">&ldquo;From luxury weddings to high-impact corporate meets, we design unforgettable moments.&rdquo;</span>
             </p>
             <div className="mt-6 sm:mt-10 flex flex-col sm:flex-row sm:items-center gap-6">
-              <a
-                href="#contact"
+              <Link
+                href="/contact"
                 className="inline-flex w-fit items-center justify-center rounded-full bg-white/15 px-6 py-3 text-sm font-medium text-white ring-1 ring-white/25 hover:bg-white/20"
               >
                 Contact Us
-              </a>
+              </Link>
               
               <div className="flex items-center gap-4 mt-4 sm:mt-0">
                 <div className="flex -space-x-2">
@@ -435,7 +435,7 @@ export default function Home() {
             <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
               <div className="relative h-72 overflow-hidden rounded-3xl shadow-lg sm:h-96">
                 <Image
-                  src="/about-greenix.webp"
+                  src="/about.webp"
                   alt="About Greenix"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"

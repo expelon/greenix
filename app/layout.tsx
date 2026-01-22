@@ -11,6 +11,11 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Greenix - Kerala\'s #1 Exclusive Event Company',
   description: 'Greenix specializes in curating unforgettable experiences that blend the elegance of Kerala\'s heritage with modern innovation. From corporate events to destination weddings, we bring your vision to life.',
+  icons: {
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
+  },
   keywords: ['event management', 'wedding planners', 'corporate events', 'destination weddings', 'Kerala events', 'private parties', 'beach weddings', 'music & entertainment'],
   openGraph: {
     title: 'Greenix - Kerala\'s #1 Exclusive Event Company',

@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -26,9 +27,24 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [scrolledPastHero, setScrolledPastHero] = useState(false);
   const isContactPage = pathname === "/contact";
   const isAboutPage = pathname === "/about";
   const isServicePage = pathname?.startsWith("/services");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const heroHeight = window.innerHeight; // Full viewport height for hero section
+      const scrollPosition = window.scrollY;
+      setScrolledPastHero(scrollPosition > heroHeight * 0.8); // 80% of hero height
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial position
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const shouldUseDarkColors = isContactPage || isAboutPage || isServicePage || scrolledPastHero;
 
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
@@ -39,17 +55,28 @@ export default function Navbar() {
   };
 
   return (
-    <header className={`fixed inset-x-0 top-0 z-50 ${isContactPage || isAboutPage || isServicePage ? "bg-white/80 backdrop-blur-md" : "bg-transparent"}`}>
-      <div className={isContactPage || isAboutPage || isServicePage ? "bg-white/80 backdrop-blur-md" : "bg-transparent"}>
+    <header className={`fixed inset-x-0 top-0 z-50 ${shouldUseDarkColors ? "bg-white/80 backdrop-blur-md" : "bg-transparent"}`}>
+      <div className={shouldUseDarkColors ? "bg-white/80 backdrop-blur-md" : "bg-transparent"}>
         <div className="mx-auto flex h-16 max-w-7xl items-center px-4 sm:px-6 lg:px-8">
           <div className="flex w-full items-center justify-between">
-            <Link href="/" className={`text-lg font-semibold tracking-wide ${isContactPage || isAboutPage || isServicePage ? "text-slate-900" : "text-white"}`}>
-              GREENIX
+            <Link href="/" className="flex items-center gap-2">
+              <div className="relative h-8 w-8">
+                <Image
+                  src="/logo2.png"
+                  alt="Greenix Logo"
+                  fill
+                  sizes="32px"
+                  className="object-contain"
+                />
+              </div>
+              <span className={`text-lg font-semibold tracking-wide ${shouldUseDarkColors ? "text-slate-900" : "text-white"}`}>
+                GREENIX
+              </span>
             </Link>
 
             <nav className="hidden flex-1 items-center justify-end gap-6 md:flex">
               {navItems.map((item) => {
-                const baseDesktopClasses = isContactPage || isAboutPage || isServicePage
+                const baseDesktopClasses = shouldUseDarkColors
                   ? "text-slate-900 hover:text-sky-600"
                   : "text-white/80 hover:text-white";
 
@@ -63,7 +90,7 @@ export default function Navbar() {
                     >
                       <button
                         className={`inline-flex items-center gap-1 text-sm font-medium uppercase tracking-wider transition-colors ${
-                          isContactPage || isAboutPage || isServicePage ? "text-slate-900" : "text-white"
+                          shouldUseDarkColors ? "text-slate-900" : "text-white"
                         }`}
                         type="button"
                         aria-haspopup="menu"
@@ -105,7 +132,7 @@ export default function Navbar() {
                     href={item.href}
                     className={`text-sm font-medium uppercase tracking-wider transition-colors ${
                       isActive(item.href)
-                        ? isContactPage || isAboutPage || isServicePage
+                        ? shouldUseDarkColors
                           ? "text-sky-600"
                           : "text-white"
                         : baseDesktopClasses
@@ -120,7 +147,7 @@ export default function Navbar() {
             <button
               aria-label="Toggle Menu"
               className={`md:hidden inline-flex h-10 w-10 items-center justify-center rounded-md transition-colors ${
-                isContactPage || isAboutPage || isServicePage ? "text-slate-900 hover:bg-slate-100" : "text-white hover:bg-white/10"
+                shouldUseDarkColors ? "text-slate-900 hover:bg-slate-100" : "text-white hover:bg-white/10"
               }`}
               onClick={() => setOpen((v) => !v)}
             >
