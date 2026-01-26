@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 const navItems = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
+  { label: "Island", href: "/pepper-island" },
   { label: "Services", href: "/#services" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
@@ -30,19 +31,25 @@ export default function Navbar() {
   const [scrolledPastHero, setScrolledPastHero] = useState(false);
   const isContactPage = pathname === "/contact";
   const isAboutPage = pathname === "/about";
+  const isPepperIslandPage = pathname === "/pepper-island";
   const isServicePage = pathname?.startsWith("/services");
 
   useEffect(() => {
     const handleScroll = () => {
       const heroHeight = window.innerHeight; // Full viewport height for hero section
       const scrollPosition = window.scrollY;
-      setScrolledPastHero(scrollPosition > heroHeight * 0.8); // 80% of hero height
+      // Only apply scroll detection for home page and pepper island page
+      if (pathname === "/" || pathname === "/pepper-island") {
+        setScrolledPastHero(scrollPosition > heroHeight * 0.8); // 80% of hero height
+      } else {
+        setScrolledPastHero(true); // Always show dark colors on other pages
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
     handleScroll(); // Check initial position
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [pathname]);
 
   const shouldUseDarkColors = isContactPage || isAboutPage || isServicePage || scrolledPastHero;
 
@@ -50,6 +57,7 @@ export default function Navbar() {
     if (href === "/") return pathname === "/";
     if (href === "/contact") return pathname === "/contact";
     if (href === "/about") return pathname === "/about";
+    if (href === "/pepper-island") return pathname === "/pepper-island";
     if (href.startsWith("/#")) return pathname === "/";
     return pathname === href;
   };
