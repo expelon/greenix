@@ -49,7 +49,7 @@ export default function PepperIsland() {
             <h1 className="mt-4 text-4xl font-semibold leading-tight tracking-tight text-white sm:text-6xl">
               Pepper Island
             </h1>
-            <p className="mt-6 text-lg leading-relaxed text-white/90">
+            <p className="mt-2 sm:mt-6 text-lg leading-relaxed text-white/90">
               A Hidden Paradise for Boat Tourism in Kochi
             </p>
           </div>
@@ -67,7 +67,7 @@ export default function PepperIsland() {
           </blockquote>
           {/* First Section with Left Image */}
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center mb-16">
-            <div className="relative h-[600px] overflow-hidden rounded-3xl shadow-lg order-2 lg:order-1">
+            <div className="relative h-[600px] overflow-hidden rounded-3xl shadow-lg order-1 lg:order-1">
               <Image
                 src="/island1.webp"
                 alt="Pepper Island Boat Tourism"
@@ -76,7 +76,7 @@ export default function PepperIsland() {
                 className="object-cover"
               />
             </div>
-            <div className="order-1 lg:order-2">
+            <div className="order-2 lg:order-2">
               <div className="prose prose-lg max-w-none">
                 <p className="text-lg leading-relaxed text-slate-700">
                   Tucked away from the city's rush and noise, Pepper Island is one of Kochi's most beautiful hidden gems an untouched private island that offers an experience rooted in nature, tradition, and genuine hospitality. If you're looking for a refreshing escape that feels both peaceful and authentic, this island is where time slows down and nature takes over.
