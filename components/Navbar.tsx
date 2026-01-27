@@ -9,6 +9,7 @@ const navItems = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Island", href: "/pepper-island" },
+  { label: "Boat Club", href: "/boat-club" },
   { label: "Services", href: "/#services" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
@@ -32,14 +33,15 @@ export default function Navbar() {
   const isContactPage = pathname === "/contact";
   const isAboutPage = pathname === "/about";
   const isPepperIslandPage = pathname === "/pepper-island";
+  const isBoatClubPage = pathname === "/boat-club";
   const isServicePage = pathname?.startsWith("/services");
 
   useEffect(() => {
     const handleScroll = () => {
       const heroHeight = window.innerHeight; // Full viewport height for hero section
       const scrollPosition = window.scrollY;
-      // Only apply scroll detection for home page and pepper island page
-      if (pathname === "/" || pathname === "/pepper-island") {
+      // Only apply scroll detection for home page, pepper island page, and boat club page
+      if (pathname === "/" || pathname === "/pepper-island" || pathname === "/boat-club") {
         setScrolledPastHero(scrollPosition > heroHeight * 0.8); // 80% of hero height
       } else {
         setScrolledPastHero(true); // Always show dark colors on other pages
@@ -58,6 +60,7 @@ export default function Navbar() {
     if (href === "/contact") return pathname === "/contact";
     if (href === "/about") return pathname === "/about";
     if (href === "/pepper-island") return pathname === "/pepper-island";
+    if (href === "/boat-club") return pathname === "/boat-club";
     if (href.startsWith("/#")) return pathname === "/";
     return pathname === href;
   };
