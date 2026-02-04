@@ -24,10 +24,10 @@ export const metadata: Metadata = {
     siteName: 'Greenix',
     images: [
       {
-        url: '/hero.webp',
+        url: '/logo.png',
         width: 1200,
         height: 630,
-        alt: 'Greenix Event Management',
+        alt: 'Greenix Event Management - Kerala\'s #1 Exclusive Event Company',
       },
     ],
     locale: 'en_US',
@@ -39,8 +39,8 @@ export const metadata: Metadata = {
     description: 'Greenix specializes in curating unforgettable experiences that blend the elegance of Kerala\'s heritage with modern innovation. From corporate events to destination weddings, we bring your vision to life.',
     images: [
       {
-        url: '/hero.webp',
-        alt: 'Greenix Event Management',
+        url: '/logo.png',
+        alt: 'Greenix Event Management - Kerala\'s #1 Exclusive Event Company',
       },
     ],
   },

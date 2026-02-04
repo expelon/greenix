@@ -1,8 +1,42 @@
 "use client";
 
+import { Metadata } from 'next';
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: 'Blog - Greenix Kerala | Event Planning Tips & Destination Stories',
+  description: 'Read Greenix blog for expert event planning tips, destination wedding guides, corporate event ideas, and Kerala tourism insights. Discover stories behind our unforgettable celebrations.',
+  keywords: ['greenix blog', 'event planning tips kerala', 'wedding planning blog', 'corporate event ideas', 'kerala destination wedding guide'],
+  openGraph: {
+    title: 'Blog - Greenix Kerala | Event Planning Tips & Destination Stories',
+    description: 'Read Greenix blog for expert event planning tips, destination wedding guides, corporate event ideas, and Kerala tourism insights.',
+    url: 'https://greenix.com/blog',
+    siteName: 'Greenix',
+    images: [
+      {
+        url: '/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Greenix Blog - Event Planning Tips & Kerala Stories',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog - Greenix Kerala | Event Planning Tips & Destination Stories',
+    description: 'Read Greenix blog for expert event planning tips, destination wedding guides, corporate event ideas, and Kerala tourism insights.',
+    images: [
+      {
+        url: '/logo.png',
+        alt: 'Greenix Blog - Event Planning Tips & Kerala Stories',
+      },
+    ],
+  },
+};
 
 export default function Blog() {
   return (

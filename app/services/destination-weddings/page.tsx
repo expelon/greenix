@@ -1,5 +1,39 @@
-import Image from "next/image";
-import Link from "next/link";
+import { Metadata } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'Destination Wedding Planners Kerala | Luxury Weddings | Greenix',
+  description: 'Greenix specializes in destination weddings across Kerala. Plan your luxury wedding at backwaters, beaches, hill stations, and heritage properties with expert coordinators.',
+  keywords: ['destination wedding kerala', 'luxury wedding planners kerala', 'kerala heritage wedding', 'backwater wedding kerala', 'hill station wedding kerala'],
+  openGraph: {
+    title: 'Destination Wedding Planners Kerala | Luxury Weddings | Greenix',
+    description: 'Greenix specializes in destination weddings across Kerala. Plan your luxury wedding at backwaters, beaches, hill stations, and heritage properties with expert coordinators.',
+    url: 'https://greenix.com/services/destination-weddings',
+    siteName: 'Greenix',
+    images: [
+      {
+        url: '/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Destination Wedding Planners Kerala - Greenix',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Destination Wedding Planners Kerala | Luxury Weddings | Greenix',
+    description: 'Greenix specializes in destination weddings across Kerala. Plan your luxury wedding at backwaters, beaches, hill stations, and heritage properties with expert coordinators.',
+    images: [
+      {
+        url: '/logo.png',
+        alt: 'Destination Wedding Planners Kerala - Greenix',
+      },
+    ],
+  },
+};
 
 const serviceHighlights = [
   {

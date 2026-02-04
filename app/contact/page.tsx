@@ -1,5 +1,39 @@
+import { Metadata } from 'next';
 import Image from "next/image";
 import ContactPageForm from "@/components/ContactPageForm";
+
+export const metadata: Metadata = {
+  title: 'Contact Us - Greenix Event Management Kerala | Wedding & Corporate Events',
+  description: 'Get in touch with Greenix, Kerala\'s #1 event management company. Contact us for weddings, corporate events, destination weddings, and private celebrations. Call +91 9846020091 or email info@thegreenix.com',
+  keywords: ['contact greenix', 'event management kerala contact', 'wedding planners kerala', 'corporate events kerala contact', 'kerala event company phone'],
+  openGraph: {
+    title: 'Contact Us - Greenix Event Management Kerala | Wedding & Corporate Events',
+    description: 'Get in touch with Greenix, Kerala\'s #1 event management company. Contact us for weddings, corporate events, destination weddings, and private celebrations.',
+    url: 'https://greenix.com/contact',
+    siteName: 'Greenix',
+    images: [
+      {
+        url: '/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Contact Greenix - Kerala Event Management Company',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact Us - Greenix Event Management Kerala | Wedding & Corporate Events',
+    description: 'Get in touch with Greenix, Kerala\'s #1 event management company. Contact us for weddings, corporate events, destination weddings, and private celebrations.',
+    images: [
+      {
+        url: '/logo.png',
+        alt: 'Contact Greenix - Kerala Event Management Company',
+      },
+    ],
+  },
+};
 
 export default function Contact() {
   return (

@@ -1,5 +1,39 @@
-import Image from "next/image";
-import Link from "next/link";
+import { Metadata } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'Wedding Planners Kerala | Professional Wedding Management | Greenix',
+  description: 'Greenix offers professional wedding planning services in Kerala. Expert wedding planners for traditional, luxury, and destination weddings with complete coordination and vendor management.',
+  keywords: ['wedding planners kerala', 'wedding management kerala', 'professional wedding coordinators', 'kerala wedding services', 'luxury wedding planners'],
+  openGraph: {
+    title: 'Wedding Planners Kerala | Professional Wedding Management | Greenix',
+    description: 'Greenix offers professional wedding planning services in Kerala. Expert wedding planners for traditional, luxury, and destination weddings with complete coordination and vendor management.',
+    url: 'https://greenix.com/services/wedding-planners',
+    siteName: 'Greenix',
+    images: [
+      {
+        url: '/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Wedding Planners Kerala - Greenix',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Wedding Planners Kerala | Professional Wedding Management | Greenix',
+    description: 'Greenix offers professional wedding planning services in Kerala. Expert wedding planners for traditional, luxury, and destination weddings with complete coordination and vendor management.',
+    images: [
+      {
+        url: '/logo.png',
+        alt: 'Wedding Planners Kerala - Greenix',
+      },
+    ],
+  },
+};
 
 const weddingServices = [
   {

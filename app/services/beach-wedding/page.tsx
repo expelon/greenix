@@ -1,5 +1,39 @@
+import { Metadata } from 'next';
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: 'Beach Wedding Planners Kerala | Seaside Weddings | Greenix',
+  description: 'Greenix offers professional beach wedding planning in Kerala. Create your dream seaside wedding with pristine beaches, golden sands, and scenic sunsets. Expert beach wedding coordinators for unforgettable ceremonies.',
+  keywords: ['beach wedding kerala', 'seaside wedding planners', 'kerala beach wedding', 'beach wedding coordinators', 'coastal wedding kerala'],
+  openGraph: {
+    title: 'Beach Wedding Planners Kerala | Seaside Weddings | Greenix',
+    description: 'Greenix offers professional beach wedding planning in Kerala. Create your dream seaside wedding with pristine beaches, golden sands, and scenic sunsets.',
+    url: 'https://greenix.com/services/beach-wedding',
+    siteName: 'Greenix',
+    images: [
+      {
+        url: '/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Beach Wedding Planners Kerala - Greenix',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Beach Wedding Planners Kerala | Seaside Weddings | Greenix',
+    description: 'Greenix offers professional beach wedding planning in Kerala. Create your dream seaside wedding with pristine beaches, golden sands, and scenic sunsets.',
+    images: [
+      {
+        url: '/logo.png',
+        alt: 'Beach Wedding Planners Kerala - Greenix',
+      },
+    ],
+  },
+};
 
 const beachServices = [
   {

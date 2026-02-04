@@ -1,5 +1,39 @@
+import { Metadata } from 'next';
 import Link from "next/link";
 import { Mail, Phone } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: 'The Real Story About the Maldives Most Don\'t Know | Greenix Blog',
+  description: 'Discover the authentic Maldives beyond luxury resorts. Learn about local island life, traditional culture, and hidden gems that most travelers never experience. Real Maldivian stories.',
+  keywords: ['maldives real story', 'authentic maldives', 'maldives local life', 'maldives culture', 'maldives tourism guide', 'maldives beyond resorts'],
+  openGraph: {
+    title: 'The Real Story About the Maldives Most Don\'t Know | Greenix Blog',
+    description: 'Discover the authentic Maldives beyond luxury resorts. Learn about local island life, traditional culture, and hidden gems that most travelers never experience.',
+    url: 'https://greenix.com/blog/maldives-real-story',
+    siteName: 'Greenix',
+    images: [
+      {
+        url: '/maldives.webp',
+        width: 1200,
+        height: 630,
+        alt: 'The Real Maldives - Authentic Island Life and Culture',
+      },
+    ],
+    locale: 'en_US',
+    type: 'article',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'The Real Story About the Maldives Most Don\'t Know | Greenix Blog',
+    description: 'Discover the authentic Maldives beyond luxury resorts. Learn about local island life, traditional culture, and hidden gems that most travelers never experience.',
+    images: [
+      {
+        url: '/maldives.webp',
+        alt: 'The Real Maldives - Authentic Island Life and Culture',
+      },
+    ],
+  },
+};
 
 export default function MaldivesRealStory() {
   return (

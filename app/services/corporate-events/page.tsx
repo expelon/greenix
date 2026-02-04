@@ -1,5 +1,39 @@
+import { Metadata } from 'next';
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: 'Corporate Event Management Company Kerala | Business Events | Greenix',
+  description: 'Greenix is a leading corporate event management company in Kerala. We organize conferences, seminars, product launches, exhibitions, and corporate meetings with precision and creativity.',
+  keywords: ['corporate event management kerala', 'business event planners kerala', 'conference organizers kerala', 'product launch events kerala', 'corporate meeting planners'],
+  openGraph: {
+    title: 'Corporate Event Management Company Kerala | Business Events | Greenix',
+    description: 'Greenix is a leading corporate event management company in Kerala. We organize conferences, seminars, product launches, exhibitions, and corporate meetings with precision and creativity.',
+    url: 'https://greenix.com/services/corporate-events',
+    siteName: 'Greenix',
+    images: [
+      {
+        url: '/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Corporate Event Management Kerala - Greenix',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Corporate Event Management Company Kerala | Business Events | Greenix',
+    description: 'Greenix is a leading corporate event management company in Kerala. We organize conferences, seminars, product launches, exhibitions, and corporate meetings with precision and creativity.',
+    images: [
+      {
+        url: '/logo.png',
+        alt: 'Corporate Event Management Kerala - Greenix',
+      },
+    ],
+  },
+};
 
 const corporateServices = [
   {

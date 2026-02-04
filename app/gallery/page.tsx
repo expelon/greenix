@@ -1,3 +1,38 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Event Gallery - Greenix Kerala | Wedding & Corporate Event Photos',
+  description: 'Explore Greenix event gallery showcasing our stunning weddings, corporate events, destination celebrations, and private parties across Kerala. See our expertise in creating memorable experiences.',
+  keywords: ['greenix gallery', 'event photos kerala', 'wedding gallery kerala', 'corporate event photos', 'kerala event management portfolio'],
+  openGraph: {
+    title: 'Event Gallery - Greenix Kerala | Wedding & Corporate Event Photos',
+    description: 'Explore Greenix event gallery showcasing our stunning weddings, corporate events, destination celebrations, and private parties across Kerala.',
+    url: 'https://greenix.com/gallery',
+    siteName: 'Greenix',
+    images: [
+      {
+        url: '/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Greenix Event Gallery - Kerala Wedding & Corporate Events',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Event Gallery - Greenix Kerala | Wedding & Corporate Event Photos',
+    description: 'Explore Greenix event gallery showcasing our stunning weddings, corporate events, destination celebrations, and private parties across Kerala.',
+    images: [
+      {
+        url: '/logo.png',
+        alt: 'Greenix Event Gallery - Kerala Wedding & Corporate Events',
+      },
+    ],
+  },
+};
+
 export default function Gallery() {
   return (
     <main className="pb-16">

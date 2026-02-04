@@ -1,6 +1,40 @@
+import { Metadata } from 'next';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: 'About Us - Greenix Event Management Company Kerala',
+  description: 'Learn about Greenix, Kerala\'s premier event management company. We craft unforgettable experiences blending Kerala\'s rich cultural heritage with modern innovation for weddings, corporate events, and celebrations.',
+  keywords: ['about greenix', 'event management kerala', 'wedding planners kerala', 'corporate events kerala', 'kerala heritage events'],
+  openGraph: {
+    title: 'About Us - Greenix Event Management Company Kerala',
+    description: 'Learn about Greenix, Kerala\'s premier event management company. We craft unforgettable experiences blending Kerala\'s rich cultural heritage with modern innovation.',
+    url: 'https://greenix.com/about',
+    siteName: 'Greenix',
+    images: [
+      {
+        url: '/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'About Greenix - Kerala Event Management Company',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Us - Greenix Event Management Company Kerala',
+    description: 'Learn about Greenix, Kerala\'s premier event management company. We craft unforgettable experiences blending Kerala\'s rich cultural heritage with modern innovation.',
+    images: [
+      {
+        url: '/logo.png',
+        alt: 'About Greenix - Kerala Event Management Company',
+      },
+    ],
+  },
+};
 
 export default function About() {
   return (

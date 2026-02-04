@@ -1,5 +1,39 @@
-import Image from "next/image";
-import Link from "next/link";
+import { Metadata } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'Music & Entertainment for Events Kerala | Live Bands & DJs | Greenix',
+  description: 'Greenix provides professional music and entertainment services for events in Kerala. Live bands, DJs, traditional cultural performances, stage shows for weddings, corporate events, and parties.',
+  keywords: ['music entertainment kerala', 'live bands kerala', 'dj services kerala', 'event entertainment kerala', 'cultural performances kerala'],
+  openGraph: {
+    title: 'Music & Entertainment for Events Kerala | Live Bands & DJs | Greenix',
+    description: 'Greenix provides professional music and entertainment services for events in Kerala. Live bands, DJs, traditional cultural performances, stage shows for weddings, corporate events, and parties.',
+    url: 'https://greenix.com/services/music-entertainment',
+    siteName: 'Greenix',
+    images: [
+      {
+        url: '/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Music & Entertainment Kerala - Greenix',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Music & Entertainment for Events Kerala | Live Bands & DJs | Greenix',
+    description: 'Greenix provides professional music and entertainment services for events in Kerala. Live bands, DJs, traditional cultural performances, stage shows for weddings, corporate events, and parties.',
+    images: [
+      {
+        url: '/logo.png',
+        alt: 'Music & Entertainment Kerala - Greenix',
+      },
+    ],
+  },
+};
 
 const entertainmentServices = [
   {
