@@ -301,9 +301,9 @@ export default function Home() {
 
         <div className="mx-auto flex min-h-[calc(100svh-4rem)] max-w-7xl items-center px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-sm font-medium uppercase tracking-widest text-white/80">
+            <h6 className="text-sm font-medium uppercase tracking-widest text-white/80">
               {heroContent[currentHero].subtitle}
-            </p>
+            </h6>
             <h1 className="mt-4 text-4xl font-semibold leading-tight tracking-tight text-white sm:text-6xl">
               {heroContent[currentHero].title}
             </h1>
