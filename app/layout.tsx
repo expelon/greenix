@@ -9,6 +9,7 @@ import { Toaster } from 'sonner';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://greenix.com'),
   title: 'Greenix - Kerala\'s #1 Exclusive Event Company',
   description: 'Greenix specializes in curating unforgettable experiences that blend the elegance of Kerala\'s heritage with modern innovation. From corporate events to destination weddings, we bring your vision to life.',
   icons: {
