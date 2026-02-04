@@ -3,6 +3,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/pepper-island',
+  },
   title: 'Pepper Island - A Hidden Paradise for Boat Tourism in Kochi | Greenix',
   description: 'Discover Pepper Island, one of Kochi\'s most beautiful hidden gems. Experience untouched private island with boat tourism, traditional South Indian cuisine, and authentic Kerala hospitality.',
   keywords: ['pepper island', 'boat tourism kochi', 'private island kochi', 'hidden paradise kochi', 'kerala backwaters', 'traditional south indian cuisine', 'nature tourism'],

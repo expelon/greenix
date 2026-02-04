@@ -3,6 +3,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/boat-club',
+  },
   title: 'Cochin Boat Club – Luxury on the Waters of Kochi | Greenix',
   description: 'Experience luxury boat tourism at Cochin Boat Club. Discover adventure, relaxation, and waterfront dining on Kochi\'s backwaters with Pepper Island getaways and premium facilities.',
   keywords: ['cochin boat club', 'boat tourism kochi', 'luxury boat club kochi', 'kochi backwaters', 'pepper island', 'waterfront dining kochi', 'marine drive kochi', 'boat docking facilities'],
