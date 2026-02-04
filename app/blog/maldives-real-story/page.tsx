@@ -3,6 +3,9 @@ import Link from "next/link";
 import { Mail, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/blog/maldives-real-story',
+  },
   title: 'The Real Story About the Maldives Most Don\'t Know | Greenix Blog',
   description: 'Discover the authentic Maldives beyond luxury resorts. Learn about local island life, traditional culture, and hidden gems that most travelers never experience. Real Maldivian stories.',
   keywords: ['maldives real story', 'authentic maldives', 'maldives local life', 'maldives culture', 'maldives tourism guide', 'maldives beyond resorts'],

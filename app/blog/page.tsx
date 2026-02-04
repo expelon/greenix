@@ -4,6 +4,9 @@ import Image from "next/image";
 import { ChevronRight } from "lucide-react";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/blog',
+  },
   title: 'Blog - Greenix Kerala | Event Planning Tips & Destination Stories',
   description: 'Read Greenix blog for expert event planning tips, destination wedding guides, corporate event ideas, and Kerala tourism insights. Discover stories behind our unforgettable celebrations.',
   keywords: ['greenix blog', 'event planning tips kerala', 'wedding planning blog', 'corporate event ideas', 'kerala destination wedding guide'],

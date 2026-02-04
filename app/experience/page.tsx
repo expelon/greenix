@@ -1,6 +1,9 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/experience',
+  },
   title: 'Our Experience - Greenix Event Management Kerala | Expert Event Planners',
   description: 'Discover Greenix\'s extensive experience in event management across Kerala. Years of expertise in creating unforgettable weddings, corporate events, destination celebrations, and private parties with cultural excellence.',
   keywords: ['greenix experience', 'event management expertise kerala', 'wedding planning experience', 'corporate event expertise kerala', 'kerala event company portfolio'],

@@ -3,6 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/services/beach-wedding',
+  },
   title: 'Beach Wedding Planners Kerala | Seaside Weddings | Greenix',
   description: 'Greenix offers professional beach wedding planning in Kerala. Create your dream seaside wedding with pristine beaches, golden sands, and scenic sunsets. Expert beach wedding coordinators for unforgettable ceremonies.',
   keywords: ['beach wedding kerala', 'seaside wedding planners', 'kerala beach wedding', 'beach wedding coordinators', 'coastal wedding kerala'],

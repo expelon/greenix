@@ -3,6 +3,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/services/wedding-planners',
+  },
   title: 'Wedding Planners Kerala | Professional Wedding Management | Greenix',
   description: 'Greenix offers professional wedding planning services in Kerala. Expert wedding planners for traditional, luxury, and destination weddings with complete coordination and vendor management.',
   keywords: ['wedding planners kerala', 'wedding management kerala', 'professional wedding coordinators', 'kerala wedding services', 'luxury wedding planners'],

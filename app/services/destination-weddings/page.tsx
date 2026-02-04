@@ -3,6 +3,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/services/destination-weddings',
+  },
   title: 'Destination Wedding Planners Kerala | Luxury Weddings | Greenix',
   description: 'Greenix specializes in destination weddings across Kerala. Plan your luxury wedding at backwaters, beaches, hill stations, and heritage properties with expert coordinators.',
   keywords: ['destination wedding kerala', 'luxury wedding planners kerala', 'kerala heritage wedding', 'backwater wedding kerala', 'hill station wedding kerala'],

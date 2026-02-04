@@ -3,6 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/services/corporate-events',
+  },
   title: 'Corporate Event Management Company Kerala | Business Events | Greenix',
   description: 'Greenix is a leading corporate event management company in Kerala. We organize conferences, seminars, product launches, exhibitions, and corporate meetings with precision and creativity.',
   keywords: ['corporate event management kerala', 'business event planners kerala', 'conference organizers kerala', 'product launch events kerala', 'corporate meeting planners'],

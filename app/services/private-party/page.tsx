@@ -3,6 +3,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/services/private-party',
+  },
   title: 'Private Party Planners Kerala | Birthday & Celebration Events | Greenix',
   description: 'Greenix offers professional private party planning services in Kerala. Expert planners for birthday parties, anniversaries, private celebrations with customized themes, entertainment, and catering.',
   keywords: ['private party planners kerala', 'birthday party organizers kerala', 'anniversary celebration kerala', 'private event planners kerala', 'party management kerala'],

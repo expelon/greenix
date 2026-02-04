@@ -1,6 +1,9 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/gallery',
+  },
   title: 'Event Gallery - Greenix Kerala | Wedding & Corporate Event Photos',
   description: 'Explore Greenix event gallery showcasing our stunning weddings, corporate events, destination celebrations, and private parties across Kerala. See our expertise in creating memorable experiences.',
   keywords: ['greenix gallery', 'event photos kerala', 'wedding gallery kerala', 'corporate event photos', 'kerala event management portfolio'],

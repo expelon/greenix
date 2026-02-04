@@ -3,6 +3,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/services/music-entertainment',
+  },
   title: 'Music & Entertainment for Events Kerala | Live Bands & DJs | Greenix',
   description: 'Greenix provides professional music and entertainment services for events in Kerala. Live bands, DJs, traditional cultural performances, stage shows for weddings, corporate events, and parties.',
   keywords: ['music entertainment kerala', 'live bands kerala', 'dj services kerala', 'event entertainment kerala', 'cultural performances kerala'],
