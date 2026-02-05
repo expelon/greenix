@@ -10,17 +10,17 @@ const heroImages = ["/hero.webp", "/about-home.jpg", "/hero3.webp"];
 
 const heroContent = [
   {
-    subtitle: "Kerala's #1 Exclusive Event Company",
+    subtitle: "BEST WEDDING PLANNERS IN KOCHI",
     title: "Greenix Experiences: Stories That Inspire",
     description: "Elevating events with Kerala's heritage and corporate brilliance. Dealer meets, leadership gatherings, and curated celebrations—every event tells a tale.",
   },
   {
-    subtitle: "Kerala's #1 Exclusive Event Company",
+    subtitle: "BEST WEDDING PLANNERS IN KOCHI",
     title: "Crafting Experiences, Not Just Events",
     description: "Where Kerala's cultural grace meets modern corporate excellence. From summits to island weddings, we blend heritage with ambition to create lasting memories.",
   },
   {
-    subtitle: "Kerala's #1 Exclusive Event Company",
+    subtitle: "BEST WEDDING PLANNERS IN KOCHI",
     title: "Celebrate the Spirit of Kerala with Greenix",
     description: "Bespoke events that blend tradition, elegance, and modern flair. From luxury weddings to high-impact corporate meets, we design unforgettable moments.",
   },
