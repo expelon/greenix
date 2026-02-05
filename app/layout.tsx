@@ -13,8 +13,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
-  title: 'Greenix - Kerala\'s #1 Exclusive Event Company',
-  description: 'Greenix specializes in curating unforgettable experiences that blend the elegance of Kerala\'s heritage with modern innovation. From corporate events to destination weddings, we bring your vision to life.',
+  title: 'Event Management Company in Kerala | Greenix Experiences',
+  description: 'Greenix Experiences is a leading event management company in Kerala offering corporate events, weddings, destination celebrations, and cultural experiences with seamless execution.',
   icons: {
     icon: '/logo.png',
     shortcut: '/logo.png',
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
   },
   keywords: ['event management', 'wedding planners', 'corporate events', 'destination weddings', 'Kerala events', 'private parties', 'beach weddings', 'music & entertainment'],
   openGraph: {
-    title: 'Greenix - Kerala\'s #1 Exclusive Event Company',
-    description: 'Greenix specializes in curating unforgettable experiences that blend the elegance of Kerala\'s heritage with modern innovation. From corporate events to destination weddings, we bring your vision to life.',
+    title: 'Event Management Company in Kerala | Greenix Experiences',
+    description: 'Greenix Experiences is a leading event management company in Kerala offering corporate events, weddings, destination celebrations, and cultural experiences with seamless execution.',
     url: 'https://greenix.com',
     siteName: 'Greenix',
     images: [
@@ -39,8 +39,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Greenix - Kerala\'s #1 Exclusive Event Company',
-    description: 'Greenix specializes in curating unforgettable experiences that blend the elegance of Kerala\'s heritage with modern innovation. From corporate events to destination weddings, we bring your vision to life.',
+    title: 'Event Management Company in Kerala | Greenix Experiences',
+    description: 'Greenix Experiences is a leading event management company in Kerala offering corporate events, weddings, destination celebrations, and cultural experiences with seamless execution.',
     images: [
       {
         url: '/logo.png',
