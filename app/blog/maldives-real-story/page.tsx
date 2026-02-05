@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'The Real Story About the Maldives Most Don\'t Know | Greenix Blog',
     description: 'Discover the authentic Maldives beyond luxury resorts. Learn about local island life, traditional culture, and hidden gems that most travelers never experience.',
-    url: 'https://greenix.com/blog/maldives-real-story',
+    url: 'https://www.thegreenix.com/blog/maldives-real-story',
     siteName: 'Greenix',
     images: [
       {

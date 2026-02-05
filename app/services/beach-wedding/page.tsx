@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Beach Wedding Planners Kerala | Seaside Weddings | Greenix',
     description: 'Greenix offers professional beach wedding planning in Kerala. Create your dream seaside wedding with pristine beaches, golden sands, and scenic sunsets.',
-    url: 'https://greenix.com/services/beach-wedding',
+    url: 'https://www.thegreenix.com/services/beach-wedding',
     siteName: 'Greenix',
     images: [
       {

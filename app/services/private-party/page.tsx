@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Private Party Planners Kerala | Birthday & Celebration Events | Greenix',
     description: 'Greenix offers professional private party planning services in Kerala. Expert planners for birthday parties, anniversaries, private celebrations with customized themes, entertainment, and catering.',
-    url: 'https://greenix.com/services/private-party',
+    url: 'https://www.thegreenix.com/services/private-party',
     siteName: 'Greenix',
     images: [
       {

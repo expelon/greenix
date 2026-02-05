@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Destination Wedding Planners Kerala | Luxury Weddings | Greenix',
     description: 'Greenix specializes in destination weddings across Kerala. Plan your luxury wedding at backwaters, beaches, hill stations, and heritage properties with expert coordinators.',
-    url: 'https://greenix.com/services/destination-weddings',
+    url: 'https://www.thegreenix.com/services/destination-weddings',
     siteName: 'Greenix',
     images: [
       {

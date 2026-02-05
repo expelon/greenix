@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Event Gallery - Greenix Kerala | Wedding & Corporate Event Photos',
     description: 'Explore Greenix event gallery showcasing our stunning weddings, corporate events, destination celebrations, and private parties across Kerala.',
-    url: 'https://greenix.com/gallery',
+    url: 'https://www.thegreenix.com/gallery',
     siteName: 'Greenix',
     images: [
       {

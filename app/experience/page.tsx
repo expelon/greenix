@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Our Experience - Greenix Event Management Kerala | Expert Event Planners',
     description: 'Discover Greenix\'s extensive experience in event management across Kerala. Years of expertise in creating unforgettable weddings, corporate events, and celebrations.',
-    url: 'https://greenix.com/experience',
+    url: 'https://www.thegreenix.com/experience',
     siteName: 'Greenix',
     images: [
       {

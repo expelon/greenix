@@ -9,7 +9,7 @@ import { Toaster } from 'sonner';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://greenix.com'),
+  metadataBase: new URL('https://www.thegreenix.com'),
   alternates: {
     canonical: '/',
   },
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Event Management Company in Kerala | Greenix Experiences',
     description: 'Greenix Experiences is a leading event management company in Kerala offering corporate events, weddings, destination celebrations, and cultural experiences with seamless execution.',
-    url: 'https://greenix.com',
+    url: 'https://www.thegreenix.com',
     siteName: 'Greenix',
     images: [
       {

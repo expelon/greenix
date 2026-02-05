@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Contact Us - Greenix Event Management Kerala | Wedding & Corporate Events',
     description: 'Get in touch with Greenix, Kerala\'s #1 event management company. Contact us for weddings, corporate events, destination weddings, and private celebrations.',
-    url: 'https://greenix.com/contact',
+    url: 'https://www.thegreenix.com/contact',
     siteName: 'Greenix',
     images: [
       {

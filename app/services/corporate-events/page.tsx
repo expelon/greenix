@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Corporate Event Management Company Kerala | Business Events | Greenix',
     description: 'Greenix is a leading corporate event management company in Kerala. We organize conferences, seminars, product launches, exhibitions, and corporate meetings with precision and creativity.',
-    url: 'https://greenix.com/services/corporate-events',
+    url: 'https://www.thegreenix.com/services/corporate-events',
     siteName: 'Greenix',
     images: [
       {

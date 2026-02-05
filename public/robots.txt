@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap will be added when created
-# Sitemap: https://greenix.com/sitemap.xml
+# Sitemap: https://www.thegreenix.com/sitemap.xml

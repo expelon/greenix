@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Pepper Island - A Hidden Paradise for Boat Tourism in Kochi | Greenix',
     description: 'Discover Pepper Island, one of Kochi\'s most beautiful hidden gems. Experience untouched private island with boat tourism, traditional South Indian cuisine, and authentic Kerala hospitality.',
-    url: 'https://greenix.com/pepper-island',
+    url: 'https://www.thegreenix.com/pepper-island',
     siteName: 'Greenix',
     images: [
       {

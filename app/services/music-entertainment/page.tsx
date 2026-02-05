@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Music & Entertainment for Events Kerala | Live Bands & DJs | Greenix',
     description: 'Greenix provides professional music and entertainment services for events in Kerala. Live bands, DJs, traditional cultural performances, stage shows for weddings, corporate events, and parties.',
-    url: 'https://greenix.com/services/music-entertainment',
+    url: 'https://www.thegreenix.com/services/music-entertainment',
     siteName: 'Greenix',
     images: [
       {

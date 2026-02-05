@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Wedding Planners Kerala | Professional Wedding Management | Greenix',
     description: 'Greenix offers professional wedding planning services in Kerala. Expert wedding planners for traditional, luxury, and destination weddings with complete coordination and vendor management.',
-    url: 'https://greenix.com/services/wedding-planners',
+    url: 'https://www.thegreenix.com/services/wedding-planners',
     siteName: 'Greenix',
     images: [
       {

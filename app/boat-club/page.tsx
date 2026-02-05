@@ -11,8 +11,8 @@ export const metadata: Metadata = {
   keywords: ['cochin boat club', 'boat tourism kochi', 'luxury boat club kochi', 'kochi backwaters', 'pepper island', 'waterfront dining kochi', 'marine drive kochi', 'boat docking facilities'],
   openGraph: {
     title: 'Cochin Boat Club – Luxury on the Waters of Kochi | Greenix',
-    description: 'Experience luxury boat tourism at Cochin Boat Club. Discover adventure, relaxation, and waterfront dining on Kochi\'s backwaters with Pepper Island getaways.',
-    url: 'https://greenix.com/boat-club',
+    description: 'Experience luxury boat tourism at Cochin Boat Club. Discover adventure, relaxation, and waterfront dining on Kochi\'s backwaters with Pepper Island getaways and premium facilities.',
+    url: 'https://www.thegreenix.com/boat-club',
     siteName: 'Greenix',
     images: [
       {

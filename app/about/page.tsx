@@ -12,8 +12,8 @@ export const metadata: Metadata = {
   keywords: ['about greenix', 'event management kerala', 'wedding planners kerala', 'corporate events kerala', 'kerala heritage events'],
   openGraph: {
     title: 'About Us - Greenix Event Management Company Kerala',
-    description: 'Learn about Greenix, Kerala\'s premier event management company. We craft unforgettable experiences blending Kerala\'s rich cultural heritage with modern innovation.',
-    url: 'https://greenix.com/about',
+    description: 'Learn about Greenix, Kerala\'s premier event management company. We craft unforgettable experiences blending Kerala\'s rich cultural heritage with modern innovation for weddings, corporate events, and celebrations.',
+    url: 'https://www.thegreenix.com/about',
     siteName: 'Greenix',
     images: [
       {
