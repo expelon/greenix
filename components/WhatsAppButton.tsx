@@ -1,11 +1,26 @@
 'use client';
 
+declare global {
+  interface Window {
+    gtag: (command: string, targetId: string, config?: any) => void;
+  }
+}
+
 export default function WhatsAppButton() {
   const phoneNumber = '9349372050'; // WhatsApp number without spaces
   
   const handleClick = () => {
     const whatsappUrl = `https://wa.me/${phoneNumber}`;
     window.open(whatsappUrl, '_blank');
+    
+    // Track WhatsApp button click event
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'whatsapp_click', {
+        event_category: 'Social Media',
+        event_label: 'WhatsApp Button',
+        value: 1
+      });
+    }
   };
 
   return (

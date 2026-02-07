@@ -3,6 +3,12 @@
 import { useState } from 'react';
 import { toast } from 'sonner';
 
+declare global {
+  interface Window {
+    gtag: (command: string, targetId: string, config?: any) => void;
+  }
+}
+
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -49,6 +55,15 @@ export default function ContactForm() {
       // Show success message and reset form
       toast.success('Thank you for contacting us! We will get back to you soon.');
       form.reset();
+      
+      // Track form submission event
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'form_submit', {
+          event_category: 'Contact Form',
+          event_label: 'Contact Page',
+          value: 1
+        });
+      }
     } catch (error) {
       toast.error('Failed to submit form. Please try again.');
     } finally {
