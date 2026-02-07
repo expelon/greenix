@@ -7,9 +7,9 @@ export default function Footer() {
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* Company Info */}
           <div>
-            <h3 className="text-lg font-semibold text-white">Greenix Experiences & Events</h3>
+            <h3 className="text-lg font-semibold text-white">Greenix Experiences</h3>
             <p className="mt-4 text-sm leading-relaxed">
-              Kerala&apos;s #1 Exclusive Event Company. We specialize in curating unforgettable experiences that blend the elegance of Kerala&apos;s heritage with modern innovation.
+              A leading event management company in Kerala offering corporate events, weddings, destination celebrations, and cultural experiences with seamless execution.
             </p>
             <div className="mt-6 flex gap-4">
               <a 
