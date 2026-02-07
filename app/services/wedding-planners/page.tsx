@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import ServiceSchema from '@/components/ServiceSchema';
 
 export const metadata: Metadata = {
   alternates: {
@@ -200,6 +201,11 @@ export default function WeddingPlannersPage() {
           </div>
         </div>
       </section>
+      <ServiceSchema 
+        serviceName="Wedding Planning Services"
+        description="Professional wedding planning services in Kerala. Expert wedding planners for traditional, luxury, and destination weddings with complete coordination and vendor management."
+        url="/services/wedding-planners"
+      />
     </main>
   );
 }

@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Image from "next/image";
 import Link from "next/link";
+import ServiceSchema from '@/components/ServiceSchema';
 
 export const metadata: Metadata = {
   alternates: {
@@ -166,6 +167,11 @@ export default function CorporateEventsPage() {
           </div>
         </div>
       </section>
+      <ServiceSchema 
+        serviceName="Corporate Event Management"
+        description="Professional corporate event planning including conferences, seminars, product launches, exhibitions, and business meetings with precision and creativity."
+        url="/services/corporate-events"
+      />
     </main>
   );
 }
